@@ -1,0 +1,126 @@
+@font-face {
+  font-family: InfoFont;
+  src: url(Caveat-SemiBold.ttf);
+}
+@font-face {
+  font-family: WelcomeFont;
+  src: url(Salting-Free.ttf);
+}
+
+.icon{
+  position: absolute;
+  top: 0;
+  padding: 15px;
+  background-color: rgba(0,0,0,0);
+}
+#i1{
+  left: 10%;
+}
+#i2{
+  right: 10%;
+}
+
+.welcome{
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  right: 10%;
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-align: center;
+  font-family: WelcomeFont;
+  font-size: 96px;}
+
+.welcome:hover{
+  background: rgba(0,0,0,0);
+  transition: all 0.5s ease-in-out;
+}
+
+body{
+  background: linear-gradient(
+    172.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(91, 192, 222, 1) 94.3%
+  );
+}
+
+.info{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    right: 10%;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    font-family: InfoFont;
+    font-size: 48px;
+}
+
+
+/* BUTTON */
+.button {
+    position: relative;
+    overflow: hidden;
+    height: 6rem;
+    padding: 0 2rem;
+    border-radius: 3rem;
+    background: #46b8da;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+  }
+  
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  font-size: 5rem;
+  z-index: 1;
+  font-family: WelcomeFont;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    172.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(91, 192, 222, 1) 94.3%
+  );
+  transition: all 0.6s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+#button{
+  position: absolute;
+  top: 80%;
+  left: 20%;
+}
+
+.fin{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: InfoFont;
+  color: rgb(137, 64, 247);
+}
