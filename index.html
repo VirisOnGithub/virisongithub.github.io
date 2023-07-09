@@ -3,6 +3,7 @@
         <title>VirisOnGithub</title>
         <link rel="stylesheet" href="styles/style-accueil.css">
         <link rel="stylesheet" href="styles/style-bouton.css">
+        <link rel="stylesheet" href="styles/style-discord-github.css">
         <link rel="icon" href="assets/vog-logo.png">
         <script src="script.js"></script>
     </head>
@@ -24,9 +25,9 @@
                 <h2>Ici vous retrouverez mes projets et les liens utiles à mon propos</h2>
             </div>
         </section>
+
         <section id="projects">
-            <div class="titleProjects">
-                <h2>Mes projets</h2>
+            <h2>Mes projets</h2>
             <ul class="projects-sorter">    
                 <li>
                     <div class="card">
@@ -57,5 +58,19 @@
                     </div>
                 </li>
             </ul>
+        </section>
+
+
+        <!-- Discord & Github-->
+        <footer>
+            <button class="Btn">
+                <img src="assets/discord.svg" alt="Discord logo" class="svgIcon" height="30px">
+                <span class="text">Discord</span>
+            </button>
+            <button class="Btn" onclick="window.open('https://github.com/VirisOnGithub','_blank')">
+                <img src="assets/github.svg" alt="Github logo" class="svgIcon" height="30px">
+                <span class="text">Github</span>
+            </button>
+        </footer>
     </body>
 </html>

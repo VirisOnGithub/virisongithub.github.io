@@ -5,6 +5,7 @@
 
 header{
     background-color: darkslateblue;
+    border-radius: 10px;
 }
 .name{
     color: white;
@@ -16,7 +17,7 @@ header{
     letter-spacing: 0.05em;
 }
 .logo{
-    height: 5em;
+    height: 6em;
     margin: 1em;
     align-self: center;
     border-radius: 10%;
@@ -33,6 +34,7 @@ nav li{
     color: white;
     font-size: 1.5em;
     cursor: pointer;
+    white-space: nowrap;
 }
 nav ul{
     display: flex;
@@ -56,6 +58,7 @@ nav{
     flex-direction: column;
     margin: 1em;
     font-family: Carter One;
+    border-radius: 10px;
 }
 /* #PROJETS */
 #projects{
@@ -68,12 +71,30 @@ nav{
     list-style-type: none;
     margin: 0;
     padding: 0;
-    border: 1px solid darkslateblue;   
+    border: 1px solid darkslateblue;
+    border-radius: 0 0 10px 10px;
 }
 #projects h2{
     font-size: 1.5em;
-    font-family: 'Carter One';
+    font-family: Carter One;
     letter-spacing: 0.05em;
     text-align: center;
     color:darkslateblue;
+}
+#projects{
+    margin: 1em;
+    border-radius: 10px;
+    font-family: Carter One;
+}
+
+/* FOOTER */
+footer{
+    margin: 1em;
+    padding: 1em;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
