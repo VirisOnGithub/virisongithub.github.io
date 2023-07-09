@@ -3,6 +3,7 @@
     width: 15em;
     height: 15em;
     perspective: 1000px;
+    display: inline-block;
   }
   
   .card-inner {

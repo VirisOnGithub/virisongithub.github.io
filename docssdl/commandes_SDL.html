@@ -1,0 +1,247 @@
+<html>
+    <head>
+        <title>Commandes SDL</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <details>
+            <summary>
+                Voici la structure définissant la couleur en SDL
+            </summary>
+            typedef struct SDL_Color <br/>
+            { <br/>
+                Uint8 r; <br/>
+                Uint8 g; <br/>
+                Uint8 b; <br/>
+                Uint8 a; <br/>
+            } SDL_Color; <br/>
+        </details>
+
+        <details>
+            <summary>
+                SDL_Init(SDL_INT_VIDEO)
+            </summary>
+            <blockquote>retourne 0 si l'initialisation du module vidéo (et events) de SDL s'est bien déroulée
+                retourne une valeur négative sinon</blockquote>
+        </details>
+
+
+        <details>
+            <summary>
+                if (SDL_Init(SDL_INIT_VIDEO) < 0){ <br/>
+                    <p>
+                        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "[DEBUG] > %s", SDL_GetError()); <br/>
+                        return EXIT_FAILURE; <br/>
+                    </p>
+                }
+            </summary>
+            <blockquote>SDL_LogError catégorise l'erreur qui se produit en fonction de SDL_GetError</blockquote>
+        </details>
+
+        <details>
+            <summary class="struct">
+                SDL_Window* nomFenêtre{ nullptr }
+            </summary>
+            <blockquote>crée l'objet qui contiendra la fenêtre</blockquote>
+        </details>
+
+        <details>
+            <summary class="struct">
+                SDL_Renderer* nomRenderer { nullptr }
+            </summary>
+            <blockquote>crée l'objet qui contiendra le moteur de rendu</blockquote>
+        </details>
+
+        <details>
+            <summary class="struct">
+                SDL_Texture* nomTexture { nullptr }
+            </summary>
+            <blockquote>crée l'objet qui contiendra la texture</blockquote>
+        </details>
+
+        <details>
+            <summary>
+                SDL_CreateWindowAndRenderer(x,y,flags,window,renderer)
+            </summary>
+            <blockquote>
+                crée la fenêtre avec le moteur de rendu en utilisant les objets associés <br/>  
+                x et y sont les dimensions de la fenêtre
+            </blockquote>
+        </details>
+
+        <details>
+            <summary>
+                if (SDL_CreateWindowAndRenderer(800, 600, SDL_WINDOW_SHOWN, &pWindow, &pRenderer) < 0){ <br/>
+                    <p>
+                        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "[DEBUG] > %s", SDL_GetError());        <br/>
+                        SDL_Quit(); <br/>
+                        return EXIT_FAILURE;<br/>
+                    </p>
+                    }
+            </summary>
+            <blockquote>si on n'arrive pas à ouvrir la fenêtre, il ne faut pas oublier de quitter SDL (qu'on a initialisé tout à l'heure)</blockquote>
+        </details>
+
+        <details>
+            <summary>
+                SDL_SetWindowTitle(window,title)
+            </summary>
+            <blockquote>modifie le titre de la fenêtre choisie</blockquote>
+        </details>
+
+
+        <details>
+            <summary>
+                SDL_Event events
+            </summary>
+            <blockquote>on initialise l'objet Event pour pouvoir interagir avec la fenêtre</blockquote>
+        </details>
+
+        <details>
+            <summary>
+                bool isOpen{ true }; <br/>
+            while (isOpen) <br/>
+            { <br/>
+                <p>
+                    while (SDL_PollEvent(&events)) <br/>
+                    { <br/>
+                        <div style="padding-left: 40px;">
+                            switch (events.type) <br/>
+                            { <br/>
+                                <div style="padding-left: 60px;">
+                                    case SDL_QUIT: <br/>
+                                    isOpen = false; <br/>
+                                    break; <br/>
+                                </div>
+                            }<br/>
+                        </div>
+                    }
+                </p>
+            }
+            </summary>
+            <blockquote>
+                SDL_PollEvent attend le prochain évènement, et renvoie 1 tant que ce n'est pas le cas <br/>
+                events.type gère l'input en question <br/>
+                SDL_QUIT est l'évènement déclenché par le clic sur la croix rouge <br/>
+                par exemple, SDL_MOUSEBUTTONDOWN est l'évènement déclenché par le clic
+            </blockquote>
+        </details>
+
+
+        <details>
+            <summary>
+                SDL_Event events; <br/>
+            bool isOpen{ true }; <br/>
+            while (isOpen) <br/>
+            { <br/>
+                /* évènements de votre jeu */ <br/>
+            } <br/>
+            </summary>
+            <blockquote>
+                on peut aussi faire une boucle infinie et gérer les évènements de notre jeu à l'intérieur <br/>
+                en réalité, c'est ce modèle qu'on utilisera le plus souvent
+            </blockquote>
+        </details>
+
+        <div class="commande">SDL_DestroyRenderer(renderer)</div>
+        <div class="commande">SDL_DestroyWindow(window)</div>
+        <details>
+            <summary>
+                SDL_Quit()
+            </summary>
+            <blockquote>avant de finir l'éxécution, il ne faut pas oublier de détruire la fenêtre, le renderer et de quitter SDL</blockquote>
+        </details>
+
+        <details>
+            <summary>
+                SDL_Delay(tps)
+            </summary>
+            <blockquote>
+                permet de faire attendre le programme <br/>
+                tps est le temps en millisecondes que l'on veut faire attendre le programme
+            </blockquote>
+        </details>
+
+        <details>
+            <summary>
+                SDL_SetRenderDrawColor(renderer,r,g,b,a)
+            </summary>
+            <blockquote>
+                permet de choisir la couleur de fond de la fenêtre <br/>
+                r, g, b et a sont les composantes de la couleur (rouge, vert, bleu et alpha)
+            </blockquote>
+        </details>
+
+        <details>
+            <summary>
+                SDL_RenderClear(renderer)
+            </summary>
+            <blockquote>
+                permet de nettoyer le renderer <br/>
+                retourne 0 si tout s'est bien passé, une valeur négative sinon
+            </blockquote>
+        </details>
+
+        <details>
+            <summary>
+                SDL_RenderPresent(renderer)
+            </summary>
+            <blockquote>
+                permet de mettre à jour le renderer <br/>
+                elle ne retrourne rien
+            </blockquote>
+        </details>
+
+        <details>
+            <summary>
+                Voici la structure définissant le point en SDL
+            </summary>
+            typedef struct SDL_Point <br/>
+            { <br/>
+                int x; <br/>
+                int y; <br/>
+            } SDL_Point; <br/>
+        </details>
+
+        <div class="commande">SDL_RenderDrawPoint(renderer,point)</div>
+
+        <details>
+            <summary>
+                Voici la structure définissant le rectangle en SDL
+            </summary>
+            typedef struct SDL_Rect <br/>
+            { <br/>
+                int x; <br/>
+                int y; <br/>
+                int w; <br/>
+                int h; <br/>
+            } SDL_Rect; <br/>
+        </details>
+
+        <details>
+            <summary>
+                SDL_RenderDrawRect(renderer,rect)
+            </summary>
+            <blockquote>
+                permet de dessiner un rectangle <br/>
+                rect est un pointeur vers un SDL_Rect
+            </blockquote>
+        </details>
+
+        <details>
+            <summary>
+                SDL_CreateTextureFromSurface(renderer,surface)
+            </summary>
+            <blockquote>
+                permet de créer une texture à partir d'une surface <br/>
+                surface est un pointeur vers un SDL_Surface
+            </blockquote>
+        </details>
+
+
+    </body>
+</html>
