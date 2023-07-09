@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Carter One';
-    src: url(assets/fonts/CarterOne-Regular.ttf);
+    font-family: Carter One;
+    src: url(../assets/fonts/CarterOne-Regular.ttf);
 }
 
 header{
@@ -12,7 +12,7 @@ header{
     font-weight: bold;
     margin: 1em;
     align-self: center;
-    font-family: 'Carter One';
+    font-family: Carter One;
     letter-spacing: 0.05em;
 }
 .logo{
@@ -21,23 +21,18 @@ header{
     align-self: center;
     border-radius: 10%;
 }
-nav a{
-    color: white;
-    text-decoration: none;
-    margin: 1em;
-    font-size: 1.5em;
-}
-nav a:hover{
-    color: lightgrey;
-    text-decoration: underline;
-}
 nav li{
     display: inline-block;
     margin: 1em;
     padding: 1em;
     text-align: center;
     border: 1px solid white;
-    height: 2em;
+    height: 1.5em;
+    border-radius: 10px;
+    font-family: Carter One;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 nav ul{
     display: flex;
@@ -60,12 +55,13 @@ nav{
     align-items: center;
     flex-direction: column;
     margin: 1em;
+    font-family: Carter One;
 }
 /* #PROJETS */
 #projects{
     background-color: rgb(80, 160, 240);
 }
-#projects ul{
+.projects-sorter{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -74,27 +70,10 @@ nav{
     padding: 0;
     border: 1px solid darkslateblue;   
 }
-#projects li{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1em;
-    padding: 1em;
-    border: 1px solid darkslateblue;
-    border-radius: 10%;
-    background-color: darkslateblue;
-    width: 10em;
-    height: 10em;
-}
-#projects li:hover{
-    background-color: rgb(80, 160, 240);
-    transition: all 0.5s;
-    transform: scale(1.05);
-}
-.titleProjects{
+#projects h2{
     font-size: 1.5em;
     font-family: 'Carter One';
     letter-spacing: 0.05em;
     text-align: center;
+    color:darkslateblue;
 }
