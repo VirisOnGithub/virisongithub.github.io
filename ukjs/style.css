@@ -1,10 +1,10 @@
 @font-face {
   font-family: InfoFont;
-  src: url(Caveat-SemiBold.ttf);
+  src: url(assets/fonts/Caveat-SemiBold.ttf);
 }
 @font-face {
   font-family: WelcomeFont;
-  src: url(Salting-Free.ttf);
+  src: url(assets/fonts/Salting-Free.ttf);
 }
 
 .icon{

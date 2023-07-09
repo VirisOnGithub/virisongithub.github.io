@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'Carter One';
+    src: url(assets/fonts/CarterOne-Regular.ttf);
+}
+
+header{
+    background-color: darkslateblue;
+}
+.name{
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em;
+    align-self: center;
+    font-family: 'Carter One';
+    letter-spacing: 0.05em;
+}
+.logo{
+    height: 5em;
+    margin: 1em;
+    align-self: center;
+    border-radius: 10%;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    margin: 1em;
+    font-size: 1.5em;
+}
+nav a:hover{
+    color: lightgrey;
+    text-decoration: underline;
+}
+nav li{
+    display: inline-block;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    border: 1px solid white;
+    height: 2em;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    vertical-align: middle;
+}
+nav{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+/* #ACCUEIL */
+#accueil div{
+    background-color: rgb(80, 160, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1em;
+}
+/* #PROJETS */
+#projects{
+    background-color: rgb(80, 160, 240);
+}
+#projects ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid darkslateblue;   
+}
+#projects li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid darkslateblue;
+    border-radius: 10%;
+    background-color: darkslateblue;
+    width: 10em;
+    height: 10em;
+}
+#projects li:hover{
+    background-color: rgb(80, 160, 240);
+    transition: all 0.5s;
+    transform: scale(1.05);
+}
+.titleProjects{
+    font-size: 1.5em;
+    font-family: 'Carter One';
+    letter-spacing: 0.05em;
+    text-align: center;
+}
