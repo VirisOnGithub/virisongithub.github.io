@@ -1,0 +1,28 @@
+body{
+    background-color: lightgray;
+}
+summary{
+    cursor: pointer;
+    font-size: 2em;
+}
+details{
+    display: inline-block;
+    width: 24.5%;
+    border: 1px solid black;
+    background-color: white;
+}
+details[open]{
+    background-color: black;
+    color: white;
+
+}
+blockquote{
+    padding-left: 1em;
+}
+.barre{
+    text-decoration: line-through;
+}
+h1{
+    font-size: 2em;
+    text-align: center;
+}
