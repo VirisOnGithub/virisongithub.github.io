@@ -40,9 +40,16 @@ nav li{
     cursor: pointer;
     white-space: nowrap;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    transition-duration: .7s;
 }
 nav li:active{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+nav li:hover{
+    background-color: white;
+    color: darkslateblue;
+    transform: scale(1.1);
+    transition-duration: .7s;
 }
 nav ul{
     display: flex;
@@ -83,7 +90,7 @@ nav{
     border-radius: 0 0 10px 10px;
 }
 #projects h2{
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: Carter One;
     letter-spacing: 0.05em;
     text-align: center;
