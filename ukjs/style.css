@@ -78,6 +78,7 @@ body{
     background-size: 400%;
     color: #fff;
     border: none;
+    cursor: pointer;
   }
   
 .button:hover::before {
