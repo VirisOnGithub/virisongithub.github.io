@@ -7,17 +7,18 @@
   src: url(assets/fonts/Salting-Free.ttf);
 }
 
+  #i1{
+    left: 10%;
+  }
+  #i2{
+    right: 10%;
+  }
+
 .icon{
   position: absolute;
   top: 0;
   padding: 15px;
   background-color: rgba(0,0,0,0);
-}
-#i1{
-  left: 10%;
-}
-#i2{
-  right: 10%;
 }
 
 .welcome{
@@ -79,6 +80,7 @@ body{
     color: #fff;
     border: none;
     cursor: pointer;
+    
   }
   
 .button:hover::before {
@@ -111,9 +113,13 @@ body{
 }
 
 #button{
-  position: absolute;
-  top: 80%;
-  left: 20%;
+  position: fixed;
+  top: calc(100% - 200px);
+  width: 100%;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 .fin{
@@ -121,7 +127,7 @@ body{
   bottom: 0;
   text-align: center;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-family: InfoFont;
   color: rgb(137, 64, 247);
 }

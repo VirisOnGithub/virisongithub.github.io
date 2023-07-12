@@ -1,11 +1,23 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>DocsMarkdown</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="../styles/style-discord-github.css">
+        <link rel="stylesheet" href="../styles/style-retour-accueil.css">
+        <script src="script.js"></script>
         <meta charset="utf-8">
     </head>
     <body>
+
+        <!-- Retour à l'accueil -->
+        <header>
+            <button class="Btn" onclick="window.open('../index.html','_self')">
+                <img src="../assets/home.svg" alt="accueil" class="svgIcon" height="30px">
+                <span class="text">Accueil</span>
+            </button>
+        </header>
+        
         <h1>DocsMarkdown</h1>
         <details>
             <summary>
@@ -37,6 +49,64 @@
             </summary>
             <blockquote>> blockquote</blockquote>
         </details>
+        <details>
+            <summary>Les listes</summary>
+            <blockquote>
+                - Liste1 <br>
+                - Liste 2 <br>
+                - Liste 3
+            </blockquote>
+        </details>
+        <details>
+            <summary>Les listes ordonnées</summary>
+            <blockquote>
+                1. Liste1 <br>
+                2. Liste 2 <br>
+                3. Liste 3
+            </blockquote>
+        </details>
+        <details>
+            <summary>Les liens</summary>
+            <blockquote>
+                [Texte du lien](https://lien.com)
+            </blockquote>
+        </details>
+        <details>
+            <summary>Les images</summary>
+            <blockquote>
+                ![Texte alternatif](https://lien.com/image.png)
+            </blockquote>
+        </details>
+        <details>
+            <summary>Code</summary>
+            <blockquote>
+                `code`
+            </blockquote>
+        </details>
+        <details>
+            <summary>Code avec langage</summary>
+            <blockquote>
+                ```langage <br>
+                code <br>
+                ```
+            </blockquote>
+        </details>
+        <details>
+            <summary>Les tableaux</summary>
+            <blockquote>
+                | Colonne 1 | Colonne 2 | <br>
+                |----------|----------| <br>
+                | Ligne 1  | Ligne 2  | <br>
+                | Ligne 3  | Ligne 4  |
+            </blockquote>
+        </details>
+        <details>
+            <summary>Special Chars</summary>
+            <blockquote>
+                \* \_ \# \+ \- \. \! \[ \] \( \) \{ \} \< \> \= \~ \: \; \` \\ \|
+            </blockquote>
+        </details>
+
         <!-- Discord & Github-->
         <footer>
             <button class="Btn" onclick="window.open('https://discord.gg/n9VYWwUURV','_blank')">

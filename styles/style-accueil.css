@@ -75,10 +75,8 @@ nav{
     font-family: Carter One;
     border-radius: 10px;
 }
+
 /* #PROJETS */
-#projects{
-    background-color: rgb(80, 160, 240);
-}
 .projects-sorter{
     display: flex;
     flex-wrap: wrap;
@@ -89,16 +87,31 @@ nav{
     border: 1px solid darkslateblue;
     border-radius: 0 0 10px 10px;
 }
-#projects h2{
+#projects h2, #about h2{
     font-size: 2em;
     font-family: Carter One;
     letter-spacing: 0.05em;
     text-align: center;
     color:darkslateblue;
 }
-#projects{
+#projects ,#about{
     margin: 1em;
     border-radius: 10px;
     font-family: Carter One;
+    background-color: rgb(80, 160, 240);
 }
 
+/* #ABOUT */
+#about p{
+    font-size: 1em;
+    font-family: Carter One;
+    text-align: center;
+    color:white;
+    margin: 1em;
+}
+
+/* HIDDEN */
+.hidden{
+    height: 100px;
+    width: 100%;
+}
