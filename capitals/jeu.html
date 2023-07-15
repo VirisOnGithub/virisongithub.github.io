@@ -9,9 +9,18 @@
     </head>
     <body>
         <div class="container"><h1>Capitals</h1></div>
-        <div class="container"><h2>Devinez la capitale du pays donné</h2>   </div>
-        <div class="buttoncontainer"><button onclick="jeu();">Continuer</button></div>
-        <div class="answer"></div>
-        <div class="score">Score</div>
+        <div class="buttoncontainer">
+            <button onclick="jeu();" class="learn-more">
+                <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Continuer</span>
+            </button>
+        </div>
+
+
+        <div class="container"><div class="answer">Devinez la capitale du pays donné</div></div>
+        <div class="score"></div>
+        <div class="vie"><img src="assets/pictures/heart-4.png"></div>
     </body>
 </html>

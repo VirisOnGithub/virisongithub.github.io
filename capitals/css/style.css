@@ -3,6 +3,9 @@
     src: url(../../assets/fonts/CarterOne-Regular.ttf);
 }
 
+body{
+    background: lightpink;
+}
 
 .score{
     position: absolute;
@@ -28,4 +31,22 @@ h1{
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+.answer{
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    font-weight: bold;
+    font-family: Carter One;
+    letter-spacing: .5px;
+    font-size: 60px;
+    padding: 40px;
+    border-radius: 10px;
+}
+.vie{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
 }
