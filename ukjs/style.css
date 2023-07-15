@@ -72,15 +72,16 @@ body{
 .button {
     position: relative;
     overflow: hidden;
-    height: 6rem;
-    padding: 0 2rem;
-    border-radius: 3rem;
+    height: 120px;
+    width: 120px;
+    padding: 5px;
+    border-radius: 60px;
+    border: 1px solid #441153;
     background: #46b8da;
     background-size: 400%;
     color: #fff;
     border: none;
     cursor: pointer;
-    
   }
   
 .button:hover::before {
@@ -89,9 +90,11 @@ body{
 
 .button-content {
   position: relative;
-  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
-  font-family: WelcomeFont;
+  color: #8940f7;
 }
 
 .button::before {
@@ -114,11 +117,9 @@ body{
 
 #button{
   position: fixed;
-  top: calc(100% - 200px);
+  top : 50%;
+  left : 90%;
   width: 100%;
-  display: flex;  
-  justify-content: center;
-  align-items: center;
   z-index: 1;
 }
 
@@ -129,5 +130,5 @@ body{
   width: 100%;
   font-size: 24px;
   font-family: InfoFont;
-  color: rgb(137, 64, 247);
+  color: #8940f7;
 }
