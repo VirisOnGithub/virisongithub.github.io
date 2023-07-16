@@ -5,8 +5,8 @@ var pays = ["Albanie", "Allemagne", "Andorre", "Arménie", "Autriche", "Azerbaï
 var capitales = ["Tirana", "Berlin", "Andorre-la-Vieille", "Erevan", "Vienne", "Bakou", "Bruxelles", "Minsk", "Sarajevo", "Sofia", "Nicosie", "Zagreb", "Copenhague", "Madrid", "Tallinn", "Helsinki", "Paris", "Tbilissi", "Athènes", "Budapest", "Dublin", "Reykjavik", "Rome", "Pristina", "Riga", "Vaduz", "Vilnius", "Luxembourg", "Skopje", "La Valette", "Chisinau", "Monaco", "Podgorica", "Oslo", "Amsterdam", "Varsovie", "Lisbonne", "Prague", "Bucarest", "Londres", "Moscou", "Saint-Marin", "Belgrade", "Bratislava", "Ljubljana", "Stockholm", "Berne", "Ankara", "Kiev", "Vatican"];
 
 function jeu(){
-    var i = Math.floor(Math.random() * pays.length);
-    var capitale = prompt("Quelle est la capitale de ce pays : " + pays[i] + " ?");
+    let i = Math.floor(Math.random() * pays.length);
+    let capitale = prompt("Quelle est la capitale de ce pays : " + pays[i] + " ?");
 
     if (capitale == capitales[i]) {
         score++;
@@ -30,7 +30,7 @@ function jeu(){
     }
     if (pays.length < 1) {
         document.querySelector(".answer").innerHTML = "Vous avez Gagné !";
-        document.querySelector(".answer").style.backgroundColor = "##FFD700";
+        document.querySelector(".answer").style.backgroundColor = "#FFD700";
         document.querySelector(".buttoncontainer").innerHTML = "<button onclick='location.reload()' class='learn-more'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Rejouer</span></button>";
 
     }
