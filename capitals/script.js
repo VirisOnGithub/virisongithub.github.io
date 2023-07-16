@@ -22,6 +22,12 @@ function jeu(){
     capitales.splice(i, 1);
 
     document.querySelector(".score").innerHTML = "Score : " + score;
+    if (pays.length < 2){
+        document.querySelector(".nbPays").innerHTML = "Pays restant : 1";
+    }
+    else{
+        document.querySelector(".nbPays").innerHTML = "Pays restants : " + pays.length;
+    }
     afficheVie();
 
     if (vie < 1) {
@@ -32,7 +38,7 @@ function jeu(){
         document.querySelector(".answer").innerHTML = "Vous avez Gagné !";
         document.querySelector(".answer").style.backgroundColor = "#FFD700";
         document.querySelector(".buttoncontainer").innerHTML = "<button onclick='location.reload()' class='learn-more'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Rejouer</span></button>";
-
+        document.body.style.backgroundImage = "url('assets/pictures/rickroll.gif')";
     }
 }
 

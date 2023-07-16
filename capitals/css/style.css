@@ -15,8 +15,19 @@ body{
     letter-spacing: .5px;
     font-size: 30px;
     margin: 10px 20px;
-    
 }
+
+.nbPays{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: Carter One;
+    letter-spacing: .5px;
+    font-size: 30px;
+    margin: 10px 20px;
+    color: darkblue;
+}
+
 h1{
     color: blue;
     font-size: 50px;
