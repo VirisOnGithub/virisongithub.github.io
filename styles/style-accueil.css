@@ -3,6 +3,10 @@
     src: url(../assets/fonts/CarterOne-Regular.ttf);
 }
 
+body{
+    background-color: lightgrey;
+}
+
 header{
     background-color: darkslateblue;
     border-radius: 10px;
@@ -99,6 +103,16 @@ nav{
     border-radius: 10px;
     font-family: Carter One;
     background-color: rgb(80, 160, 240);
+}
+.jeux, .documentation{
+    background-color: lightgrey;
+    border-radius: 10px;
+    border: 1px solid darkslateblue;
+    margin: 10px;
+}
+#projects li h3{
+    font-size: 1.5em;
+    text-align: center;
 }
 
 /* #ABOUT */
