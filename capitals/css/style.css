@@ -46,7 +46,7 @@ h1{
 }
 .vie{
     position: absolute;
-    top: 0;
+    top: 50px;
     left: 0;
     padding: 5px;
 }

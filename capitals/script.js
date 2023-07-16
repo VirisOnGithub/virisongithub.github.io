@@ -17,6 +17,10 @@ function jeu(){
         document.querySelector(".answer").innerHTML = "La bonne réponse était " + capitales[i];
         document.querySelector(".answer").style.backgroundColor = "#ff0000";
     }
+    //on veut enlever le pays et la capitale de la liste
+    pays.splice(i, 1);
+    capitales.splice(i, 1);
+
     document.querySelector(".score").innerHTML = "Score : " + score;
     afficheVie();
 
@@ -24,8 +28,14 @@ function jeu(){
         document.querySelector(".answer").innerHTML = "Vous avez perdu !";
         document.querySelector(".buttoncontainer").innerHTML = "<button onclick='location.reload()' class='learn-more'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Rejouer</span></button>";
     }
+    if (pays.length < 1) {
+        document.querySelector(".answer").innerHTML = "Vous avez Gagné !";
+        document.querySelector(".answer").style.backgroundColor = "##FFD700";
+        document.querySelector(".buttoncontainer").innerHTML = "<button onclick='location.reload()' class='learn-more'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Rejouer</span></button>";
+
+    }
 }
 
 function afficheVie(){
-    document.querySelector(".vie").innerHTML = "<img src='assets/pictures/heart-"+vie+".png' alt='vie "+vie+"' >";
+    document.querySelector(".vie").innerHTML = "<img src='assets/pictures/heart-"+vie+".png' alt='vie : "+vie+"' >";
 }
