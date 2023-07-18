@@ -7,6 +7,12 @@
         <link rel="stylesheet" href="css/button.css">
         <link rel="stylesheet" href="../styles/style-discord-github.css">
         <link rel="stylesheet" href="../styles/style-retour-accueil.css">
+        <script src="script.js"></script>   
+        <script>
+            //on veut les pays et les capitales de l'Amérique
+            var pays = ["Antigua-et-Barbuda", "Argentine", "Bahamas", "Barbade", "Belize", "Bolivie", "Brésil", "Canada", "Chili", "Colombie", "Costa Rica", "Cuba", "République dominicaine", "Dominique", "Équateur", "États-Unis", "Grenade", "Guatemala", "Guyana", "Haïti", "Honduras", "Jamaïque", "Mexique", "Nicaragua", "Panama", "Paraguay", "Pérou", "Saint-Christophe-et-Niévès", "Saint-Vincent-et-les-Grenadines", "Sainte-Lucie", "Salvador", "Suriname", "Trinité-et-Tobago", "Uruguay", "Venezuela"];
+            var capitales = ["Saint John's", "Buenos Aires", "Nassau", "Bridgetown", "Belmopan", "La Paz", "Brasilia", "Ottawa", "Santiago", "Bogota", "San José", "La Havane", "Saint-Domingue", "Roseau", "Quito", "Washington", "Saint-Georges", "Guatemala", "Georgetown", "Port-au-Prince", "Tegucigalpa", "Kingston", "Mexico", "Managua", "Panama", "Asuncion", "Lima", "Basseterre", "Kingstown", "Castries", "San Salvador", "Paramaribo", "Port-d'Espagne", "Montevideo", "Caracas"];
+        </script>
     </head>
     <body>
         <!-- Retour à l'accueil -->
@@ -17,34 +23,23 @@
             </button>
         </header>
 
+
         <div class="container"><h1>Capitals</h1></div>
-        <div class="container"><h2>Devinez la capitale du pays donné</h2></div>
         <div class="buttoncontainer">
-            <button onclick="window.open('europe.html', '_self')" class="learn-more">
+            <button onclick="jeu();" class="learn-more">
                 <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
                 </span>
-                <span class="button-text">Europe</span>
-            </button>
-            <button onclick="window.open('asie.html', '_self')" class="learn-more">
-                <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Asie</span>
-            </button>
-            <button onclick="window.open('oceanie.html', '_self')" class="learn-more">
-                <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Océanie</span>
-            </button>
-            <button onclick="window.open('amerique.html', '_self')" class="learn-more">
-                <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Amérique</span>
+                <span class="button-text">Continuer</span>
             </button>
         </div>
+
+
+        <div class="container"><div class="answer">Devinez la capitale du pays donné</div></div>
+        <div class="score"></div>
+        <div class="nbPays"></div>
+        <div class="vie"><img src="assets/pictures/heart-4.png"></div>
+
 
         <!-- Discord & Github-->
         <footer>

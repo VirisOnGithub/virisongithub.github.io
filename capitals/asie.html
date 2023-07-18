@@ -7,6 +7,12 @@
         <link rel="stylesheet" href="css/button.css">
         <link rel="stylesheet" href="../styles/style-discord-github.css">
         <link rel="stylesheet" href="../styles/style-retour-accueil.css">
+        <script src="script.js"></script>   
+        <script>
+            //on veut mettre tous les pays dans un tableau
+            var pays = ["Afghanistan", "Arabie Saoudite", "Arménie", "Azerbaïdjan", "Bahreïn", "Bangladesh", "Bhoutan", "Birmanie", "Brunei", "Cambodge", "Chine", "Corée du Nord", "Corée du Sud", "Émirats arabes unis", "Géorgie", "Inde", "Indonésie", "Irak", "Iran", "Israël", "Japon", "Jordanie", "Kazakhstan", "Kirghizistan", "Koweït", "Laos", "Liban", "Malaisie", "Maldives", "Mongolie", "Népal", "Oman", "Ouzbékistan", "Pakistan", "Philippines", "Qatar", "Russie", "Singapour", "Sri Lanka", "Syrie", "Tadjikistan", "Taïwan", "Thaïlande", "Timor oriental", "Turkménistan", "Turquie", "Viêt Nam", "Yémen"];
+            var capitales = ["Kaboul", "Riyad", "Erevan", "Bakou", "Manama", "Dacca", "Thimphou", "Naypyidaw", "Bandar Seri Begawan", "Phnom Penh", "Pékin", "Pyongyang", "Séoul", "Abou Dabi", "Tbilissi", "New Delhi", "Jakarta", "Bagdad", "Téhéran", "Jérusalem", "Tokyo", "Amman", "Noursoultan", "Bichkek", "Koweït", "Vientiane", "Beyrouth", "Kuala Lumpur", "Malé", "Oulan-Bator", "Katmandou", "Mascate", "Tachkent", "Islamabad", "Manille", "Doha", "Moscou", "Singapour", "Colombo", "Damas", "Douchanbé", "Taipei", "Bangkok", "Dili", "Achgabat", "Ankara", "Hanoï", "Sanaa"]; 
+        </script>
     </head>
     <body>
         <!-- Retour à l'accueil -->
@@ -17,34 +23,23 @@
             </button>
         </header>
 
+
         <div class="container"><h1>Capitals</h1></div>
-        <div class="container"><h2>Devinez la capitale du pays donné</h2></div>
         <div class="buttoncontainer">
-            <button onclick="window.open('europe.html', '_self')" class="learn-more">
+            <button onclick="jeu();" class="learn-more">
                 <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
                 </span>
-                <span class="button-text">Europe</span>
-            </button>
-            <button onclick="window.open('asie.html', '_self')" class="learn-more">
-                <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Asie</span>
-            </button>
-            <button onclick="window.open('oceanie.html', '_self')" class="learn-more">
-                <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Océanie</span>
-            </button>
-            <button onclick="window.open('amerique.html', '_self')" class="learn-more">
-                <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Amérique</span>
+                <span class="button-text">Continuer</span>
             </button>
         </div>
+
+
+        <div class="container"><div class="answer">Devinez la capitale du pays donné</div></div>
+        <div class="score"></div>
+        <div class="nbPays"></div>
+        <div class="vie"><img src="assets/pictures/heart-4.png"></div>
+
 
         <!-- Discord & Github-->
         <footer>
