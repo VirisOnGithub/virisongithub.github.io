@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="icon" type="image/png" href="logo-wc.png" />
+        <link rel="stylesheet" type='text/css' href="style.css">
+
+        <link rel="stylesheet" href="../styles/style-discord-github.css">
+        <link rel="stylesheet" href="../styles/style-retour-accueil.css">       
+    </head>
+    <body>
+        <!-- Retour à l'accueil -->
+        <header>
+            <button class="Btn" onclick="window.open('../index.html','_self')">
+                <img src="../assets/home.svg" alt="accueil" class="svgIcon" height="30px">
+                <span class="text">Accueil</span>
+            </button>
+        </header>
+
+        <h1>Words Counter</h1>
+        <textarea name="text" id="words" cols="30" rows="10" placeholder="Insérez votre texte ici"></textarea>
+        <div class="container">
+            <button type="button" class="button" onclick="
+                    var words = document.getElementById('words').value;
+                    var wordsArray = words.split(' ');
+                    var wordsCount = wordsArray.length;
+                    if (wordsCount == 1){
+                        // Si un seul mot, on vérifie qu'il ne s'agit pas d'un mot vide
+                        if (wordsArray[0] == ''){
+                            wordsCount = 0;
+                        }
+                        else{
+                            document.getElementById('result').innerHTML = 'Votre sélection contient ' + wordsCount + ' mot.';
+                        }
+                    }
+                    document.getElementById('result').innerHTML = 'Votre sélection contient ' + wordsCount + ' mots.';
+                    document.getElementById('result').style.display = 'block';
+            ">
+                <span class="button__text">Count words !</span>
+                <span class="button__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 5H7V7H17V5Z" fill="currentColor" /><path d="M7 9H9V11H7V9Z" fill="currentColor" /><path d="M9 13H7V15H9V13Z" fill="currentColor" /><path d="M7 17H9V19H7V17Z" fill="currentColor" /><path d="M13 9H11V11H13V9Z" fill="currentColor" /><path d="M11 13H13V15H11V13Z" fill="currentColor" /><path d="M13 17H11V19H13V17Z" fill="currentColor" /><path d="M15 9H17V11H15V9Z" fill="currentColor" /><path d="M17 13H15V19H17V13Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M3 3C3 1.89543 3.89543 1 5 1H19C20.1046 1 21 1.89543 21 3V21C21 22.1046 20.1046 23 19 23H5C3.89543 23 3 22.1046 3 21V3ZM5 3H19V21H5V3Z" fill="currentColor" /></svg></span>
+            </button>
+
+            <button type="button" class="button" onclick="
+                    document.getElementById('words').value = '';
+                    document.getElementById('result').innerHTML = '';
+                    document.getElementById('result').style.display = 'none';
+            ">
+                <span class="button__text">Clear text</span>
+                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="512" viewBox="0 0 512 512" height="512" class="svg"><title></title><path style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320"></path><line y2="112" y1="112" x2="432" x1="80" style="stroke:#323232;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line><path style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40"></path><line y2="400" y1="176" x2="256" x1="256" style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line><line y2="400" y1="176" x2="192" x1="184" style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line><line y2="400" y1="176" x2="320" x1="328" style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line></svg></span>
+            </button>
+        </div>
+        <div id="result"></div>
+
+        <!-- Discord & Github-->
+        <footer>
+            <button class="Btn" onclick="window.open('https://discord.gg/n9VYWwUURV','_blank')">
+                <img src="../assets/discord.svg" alt="Discord logo" class="svgIcon" height="30px">
+                <span class="text">Discord</span>
+            </button>
+            <button class="Btn" onclick="window.open('https://github.com/VirisOnGithub','_blank')">
+                <img src="../assets/github.svg" alt="Github logo" class="svgIcon" height="30px">
+                <span class="text">Github</span>
+            </button>
+            <button class="Btn" onclick="window.open('mailto:virisongithub@gmail.com','_blank')">
+                <img src="../assets/mail.svg" alt="mail" class="svgIcon" height="30px">
+                <span class="text">Mail</span>
+            </button>
+            <a href="https://wakatime.com/@Viris_"><img src="https://wakatime.com/badge/user/b72ca6a4-e042-401d-8f2e-b404eaf1c6e5.svg" alt="Total time coded since Jul 3 2023" /></a>
+        </footer>
+    </body>
+</html>
