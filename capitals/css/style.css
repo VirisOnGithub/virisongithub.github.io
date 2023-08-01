@@ -38,6 +38,7 @@ h1{
     width: min-content;
     padding: 10px 100px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .container{
     display: flex;
