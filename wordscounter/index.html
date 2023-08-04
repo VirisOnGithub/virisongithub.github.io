@@ -24,7 +24,8 @@
         <div class="container">
             <button type="button" class="button" onclick="
                     var words = document.getElementById('words').value;
-                    var wordsArray = words.split(' ');
+                    //on aimerait split les mots par les espaces, mais aussi les apostrophes
+                    var wordsArray = words.split(/[\s'-]+/);
                     var wordsCount = wordsArray.length;
                     if (wordsCount == 1){
                         // Si un seul mot, on vérifie qu'il ne s'agit pas d'un mot vide
@@ -35,7 +36,9 @@
                             document.getElementById('result').innerHTML = 'Votre sélection contient ' + wordsCount + ' mot.';
                         }
                     }
-                    document.getElementById('result').innerHTML = 'Votre sélection contient ' + wordsCount + ' mots.';
+                    else {
+                        document.getElementById('result').innerHTML = 'Votre sélection contient ' + wordsCount + ' mots.';
+                    }
                     document.getElementById('result').style.display = 'block';
             ">
                 <span class="button__text">Count words !</span>
