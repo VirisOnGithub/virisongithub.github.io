@@ -64,3 +64,20 @@ h1{
     left: 0;
     padding: 5px;
 }
+.answerspace{
+    position: absolute;
+    top: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    left: 0;
+    right: 0;
+    background-color: brown;
+}
+
+#reponse{
+    display: flex;
+    margin: 20px;
+}
