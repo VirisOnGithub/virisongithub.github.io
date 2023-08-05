@@ -75,7 +75,7 @@ body{
     height: 300px;
     left: 0;
     right: 0;
-    background-color: brown;
+    background-color: transparent;
 }
 .reponse{
     display: flex;
@@ -94,4 +94,17 @@ body{
     border-radius: 10px;
     outline: none;
     text-align: center;
+}
+
+#drapeau{
+    position: absolute;
+    height: 200px;
+    margin-right: 20px;
+    outline: none;
+    display: none;
+    z-index: 2;
+
+    /* positionning */
+    top: 50%;
+    right: 0;
 }

@@ -1,6 +1,8 @@
 var score = 0;
 var vie = 4;
 var clue = false;
+
+//audios
 var audioright = document.createElement("audio");
 audioright.src = "assets/audio/valid.mp3";
 var audiowrong = document.createElement("audio");
@@ -8,6 +10,7 @@ audiowrong.src = "assets/audio/wrong.mp3";
 var rickroll = document.createElement("audio");
 rickroll.src = "assets/audio/rickroll.mp3";
 
+//fonctions
 function jeu(){
     i = Math.floor(Math.random() * pays.length);
     document.querySelector(".answer").innerHTML = "Quelle est la capitale de " + pays[i] + " ?";
@@ -18,6 +21,8 @@ function jeu(){
     document.querySelector(".reponse").style.flexDirection = "column";
     document.querySelector(".reponse").innerHTML = "<input type='text' id='reponse' placeholder='Réponse' autofocus><br><button onclick='checkans()' class='learn-more' id='valid'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Valider</span></button>";
     document.getElementById("reponse").focus();
+
+    afficheDrapeau();
 }
 
 function checkans(){
@@ -40,10 +45,11 @@ function checkans(){
         }
         document.querySelector(".answer").innerHTML = "Bonne réponse !";
         document.querySelector(".answer").style.backgroundColor = "#00ff00";
+        document.querySelector("#reponse").style.backgroundColor = "#00ff00";
         audioright.play();
         document.querySelector(".indice").style.display = "none";
         var x = setTimeout(jeu, 1000);
-    } else {
+    } else {undefined
         vie--;
         if (vie < 1) {
             document.querySelector(".answer").innerHTML = "Vous avez perdu !";
@@ -89,8 +95,6 @@ function checkans(){
     document.getElementById("reponse").value = "";
 }
 
-
-var
 document;addEventListener("keydown", function (e) {
     if (e.key == "Enter" && pays.length > 0 && vie > 0) {
         checkans();
@@ -102,7 +106,7 @@ function afficheVie(){
 }
 
 function asie(){
-    pays = ["Afghanistan", "Arabie Saoudite", "Arménie", "Azerbaïdjan", "Bahreïn", "Bangladesh", "Bhoutan", "Birmanie", "Brunei", "Cambodge", "Chine", "Corée du Nord", "Corée du Sud", "Émirats arabes unis", "Géorgie", "Inde", "Indonésie", "Irak", "Iran", "Israël", "Japon", "Jordanie", "Kazakhstan", "Kirghizistan", "Koweït", "Laos", "Liban", "Malaisie", "Maldives", "Mongolie", "Népal", "Oman", "Ouzbékistan", "Pakistan", "Philippines", "Qatar", "Russie", "Singapour", "Sri Lanka", "Syrie", "Tadjikistan", "Taïwan", "Thaïlande", "Timor oriental", "Turkménistan", "Turquie", "Viêt Nam", "Yémen"];
+    pays = ["Afghanistan", "Arabie Saoudite", "Arménie", "Azerbaïdjan", "Bahreïn", "Bangladesh", "Bhoutan", "Myanmar", "Brunei", "Cambodge", "Chine", "Corée du Nord", "Corée du Sud", "Émirats arabes unis", "Géorgie", "Inde", "Indonésie", "Irak", "Iran", "Israël", "Japon", "Jordanie", "Kazakhstan", "Kirghizistan", "Koweït", "Laos", "Liban", "Malaisie", "Maldives", "Mongolie", "Népal", "Oman", "Ouzbékistan", "Pakistan", "Philippines", "Qatar", "Russie", "Singapour", "Sri Lanka", "Syrie", "Tadjikistan", "Taïwan", "Thaïlande", "Timor oriental", "Turkménistan", "Turquie", "Viêt Nam", "Yémen"];
     capitales = ["Kaboul", "Riyad", "Erevan", "Bakou", "Manama", "Dacca", "Thimphou", "Naypyidaw", "Bandar Seri Begawan", "Phnom Penh", "Pékin", "Pyongyang", "Séoul", "Abou Dabi", "Tbilissi", "New Delhi", "Jakarta", "Bagdad", "Téhéran", "Jérusalem", "Tokyo", "Amman", "Noursoultan", "Bichkek", "Koweït", "Vientiane", "Beyrouth", "Kuala Lumpur", "Malé", "Oulan-Bator", "Katmandou", "Mascate", "Tachkent", "Islamabad", "Manille", "Doha", "Moscou", "Singapour", "Colombo", "Damas", "Douchanbé", "Taipei", "Bangkok", "Dili", "Achgabat", "Ankara", "Hanoï", "Sanaa"];
     firstgame("Asie");
 }
@@ -131,6 +135,7 @@ function firstgame(continent){
     document.querySelector(".buttoncontainer").innerHTML = "";
     document.querySelector(".titre").innerHTML = "Capitales d'" + continent;
 
+    document.getElementById("drapeau").style.display = "block";
     jeu();
 }
 
@@ -140,5 +145,10 @@ function indice(){
     var indice = capitales[i].charAt(0);
     document.querySelector("#reponse").value = indice;
     document.querySelector("#reponse").focus();
+}
 
+function afficheDrapeau(){
+    var drapeau = document.querySelector("#drapeau");
+    drapeau.src = "assets/flags/" + pays[i].toLowerCase() + ".png";
+    drapeau.style.display = "block";
 }
