@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="css/button.css">
         <link rel="stylesheet" href="../styles/style-discord-github.css">
         <link rel="stylesheet" href="../styles/style-retour-accueil.css">
+        <script src="script.js"></script>   
+        <script>
+            var pays = ["Albanie", "Allemagne", "Andorre", "Arménie", "Autriche", "Azerbaïdjan", "Belgique", "Biélorussie", "Bosnie-Herzégovine", "Bulgarie", "Chypre", "Croatie", "Danemark", "Espagne", "Estonie", "Finlande", "France", "Géorgie", "Grèce", "Hongrie", "Irlande", "Islande", "Italie", "Kosovo", "Lettonie", "Liechtenstein", "Lituanie", "Luxembourg", "Macédoine du Nord", "Malte", "Moldavie", "Monaco", "Monténégro", "Norvège", "Pays-Bas", "Pologne", "Portugal", "République tchèque", "Roumanie", "Royaume-Uni", "Russie", "Saint-Marin", "Serbie", "Slovaquie", "Slovénie", "Suède", "Suisse", "Turquie", "Ukraine", "Vatican"];
+            var capitales = ["Tirana", "Berlin", "Andorre-la-Vieille", "Erevan", "Vienne", "Bakou", "Bruxelles", "Minsk", "Sarajevo", "Sofia", "Nicosie", "Zagreb", "Copenhague", "Madrid", "Tallinn", "Helsinki", "Paris", "Tbilissi", "Athènes", "Budapest", "Dublin", "Reykjavik", "Rome", "Pristina", "Riga", "Vaduz", "Vilnius", "Luxembourg", "Skopje", "La Valette", "Chisinau", "Monaco", "Podgorica", "Oslo", "Amsterdam", "Varsovie", "Lisbonne", "Prague", "Bucarest", "Londres", "Moscou", "Saint-Marin", "Belgrade", "Bratislava", "Ljubljana", "Stockholm", "Berne", "Ankara", "Kiev", "Vatican"];
+        </script>
     </head>
     <body>
         <!-- Retour à l'accueil -->
@@ -17,34 +22,48 @@
             </button>
         </header>
 
-        <div class="container"><h1 onclick="window.open('index.html','_self')">Capitals</h1></div>
-        <div class="container"><h2>Devinez la capitale du pays donné</h2></div>
+        <div class="container"><h1 class="titre" onclick="window.open('index.html','_self')">Capitals</h1></div>
         <div class="buttoncontainer">
-            <button onclick="window.open('europe.html', '_self')" class="learn-more">
+            <button onclick="afrique();" class="learn-more">
                 <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
                 </span>
-                <span class="button-text">Europe</span>
+                <span class="button-text">Afrique</span>
             </button>
-            <button onclick="window.open('asie.html', '_self')" class="learn-more">
-                <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Asie</span>
-            </button>
-            <button onclick="window.open('oceanie.html', '_self')" class="learn-more">
-                <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">Océanie</span>
-            </button>
-            <button onclick="window.open('amerique.html', '_self')" class="learn-more">
+            <button onclick="amerique();" class="learn-more">
                 <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
                 </span>
                 <span class="button-text">Amérique</span>
             </button>
+            <button onclick="asie();" class="learn-more">
+                <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Asie</span>
+            </button>
+            <button onclick="europe();" class="learn-more">
+                <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Europe</span>
+            </button>
+            <button onclick="oceanie();" class="learn-more">
+                <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Océanie</span>
+            </button>
         </div>
+        <div class="answerspace">
+            <div class="reponse"></div>
+        </div>
+
+
+        <div class="container"><div class="answer">Devinez la capitale du pays donné</div></div>
+        <div class="score"></div>
+        <div class="nbPays"></div>
+        <div class="vie"><img src="assets/pictures/heart-4.png"></div>
 
         <!-- Discord & Github-->
         <footer>

@@ -89,11 +89,12 @@ button {
 .buttoncontainer{
       /* poisitionning */
       position: absolute;
-      top: calc(60% + 75px);
+      top: 60%;
       transform: translateY(-50%);
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       width: 100%;
       z-index: 1;
 }
