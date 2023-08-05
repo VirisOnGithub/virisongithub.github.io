@@ -1,4 +1,4 @@
-button {
+ button.learn-more {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -10,9 +10,6 @@ button {
   padding: 0;
   font-size: inherit;
   font-family: inherit;
- }
- 
- button.learn-more {
   width: 20rem;
   height: auto;
  }
@@ -97,4 +94,47 @@ button {
       flex-direction: column;
       width: 100%;
       z-index: 1;
+}
+
+.indice{
+      z-index: 2;
+      position: absolute;
+      top: calc(60% - 10px);
+      left: 20%;
+      transform: translateY(-50%);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height: 3rem;
+      font-family: Carter One;
+      font-size: 1.5rem;
+      color: #fff;
+      background-color: #282936;
+      outline: none;
+      border: solid #282936;
+      border-radius: 10px;
+}
+
+.indice .indice_text{
+      transform: translateX(-10%);
+}
+
+.indice .indice_icon{
+      transform: translateY(10%);
+      position: absolute;
+      right: 0;
+}
+
+.indice:hover .indice_icon{
+      transform: translateY(10%) rotate(360deg) translateX(calc(-5rem + 50%));
+}
+
+.indice:hover .indice_text{
+     color: transparent;     
+}
+
+
+.indice, .indice_text, .indice_icon{
+      transition: all .3s;
 }

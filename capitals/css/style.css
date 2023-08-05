@@ -77,6 +77,12 @@ body{
     right: 0;
     background-color: brown;
 }
+.reponse{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
 #reponse{
     display: flex;
     margin: 20px;
