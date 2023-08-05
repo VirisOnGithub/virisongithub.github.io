@@ -45,7 +45,6 @@ function checkans(){
         }
         document.querySelector(".answer").innerHTML = "Bonne réponse !";
         document.querySelector(".answer").style.backgroundColor = "#00ff00";
-        document.querySelector("#reponse").style.backgroundColor = "#00ff00";
         audioright.play();
         document.querySelector(".indice").style.display = "none";
         var x = setTimeout(jeu, 1000);
@@ -76,6 +75,8 @@ function checkans(){
     }
     afficheVie();
 
+    document.getElementById("drapeau").display = "none";
+
     if (pays.length < 1) {
         document.querySelector(".answer").innerHTML = "Vous avez Gagné !";
         document.querySelector(".answer").style.backgroundColor = "#FFD700";
@@ -83,6 +84,7 @@ function checkans(){
         document.body.style.backgroundImage = "url('assets/pictures/rickroll.webp')";
         rickroll.play();
         document.querySelector(".answerspace").style.backgroundColor = "transparent";
+        document.getElementById("drapeau").style.display = "none";
         pays.length = 0;
         clearTimeout(x);
         return;
