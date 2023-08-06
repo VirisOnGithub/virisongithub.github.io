@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="styles/style-accueil.css">
         <link rel="stylesheet" href="styles/style-bouton.css">
         <link rel="stylesheet" href="styles/style-discord-github.css">
+        <link rel="stylesheet" href="styles/copy.css"
         <link rel="icon" href="assets/vog-logo.png">
     </head>
     <body>
@@ -109,6 +110,15 @@
             <div>
                 <p>Etudiant à Polytech Lyon et passionné par la programmation, je réalise plusieurs projets, dont ceux proposés ci-dessus (qui sont ceux que l'on peut afficher dans une page internet)</p>
                 <p>Si vous souhaitez me contacter, n'hésitez pas à envoyer un message par mail (en bas de page), par Discord (Viris_) ou à rejoindre le serveur</p>
+
+                <div class="centralize">
+                    <div>
+                        <button class="copy" onclick="navigator.clipboard.writeText(window.location.href)">
+                            <span class="copytext"><img src="assets/copy.svg" alt="Copy icon" class="copyicon">Copy link</span>
+                            <span class="copytext">Copied</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
