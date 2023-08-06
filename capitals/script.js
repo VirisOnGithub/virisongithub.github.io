@@ -13,6 +13,9 @@ rickroll.src = "assets/audio/rickroll.mp3";
 //fonctions
 function jeu(){
     i = Math.floor(Math.random() * pays.length);
+    
+    afficheDrapeau();
+
     document.querySelector(".answer").innerHTML = "Quelle est la capitale de " + pays[i] + " ?";
     document.querySelector(".answer").style.backgroundColor = "transparent";
     document.querySelector(".buttoncontainer").style.display = "none";
@@ -21,8 +24,6 @@ function jeu(){
     document.querySelector(".reponse").style.flexDirection = "column";
     document.querySelector(".reponse").innerHTML = "<input type='text' id='reponse' placeholder='Réponse' autofocus><br><button onclick='checkans()' class='learn-more' id='valid'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Valider</span></button>";
     document.getElementById("reponse").focus();
-
-    afficheDrapeau();
 }
 
 function checkans(){
