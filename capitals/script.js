@@ -155,3 +155,13 @@ function afficheDrapeau(){
     drapeau.src = "assets/flags/" + pays[i].toLowerCase() + ".png";
     drapeau.style.display = "block";
 }
+
+function displayRegles(){
+    document.querySelector(".regles").style.display = "block";
+}
+
+function closeRegles(){
+    setTimeout(function(){
+        document.querySelector(".regles").style.display = "none";
+    }, 100);
+}
