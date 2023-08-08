@@ -1,3 +1,5 @@
+ /* DESIGN GLOBAL BOUTON */
+ 
  button.learn-more {
   position: relative;
   display: inline-block;
@@ -96,6 +98,9 @@
       z-index: 1;
 }
 
+
+/* INDICE */
+
 .indice{
       z-index: 2;
       position: absolute;
@@ -121,7 +126,7 @@
 }
 
 .indice .indice_icon{
-      transform: translateY(10%);
+      transform: translate(-20%, 10%);
       position: absolute;
       right: 0;
 }
@@ -193,3 +198,78 @@
       transform: scale(1.1);
       transition: all .5s;
 }
+
+/* QCM */
+
+.qcm{
+      z-index: 2;
+      position: absolute;
+      top: calc(60% - 10px);
+      left: 10%;
+      transform: translateY(-50%);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height: 3rem;
+      font-family: Carter One;
+      font-size: 1.5rem;
+      color: #fff;
+      background-color: #282936;
+      outline: none;
+      border: solid #282936;
+      border-radius: 10px;
+}
+
+.qcm .qcm_icon{
+      position: absolute;
+      right: 0;
+      transform: translate(-30%, 10%);
+}
+
+.qcm:hover .qcm_icon{
+      transform: translate(calc(-4.5rem + 50%), 10%) rotate(360deg);
+}
+
+.qcm:hover .qcm_text{
+      color: transparent;
+}
+
+.qcm, .qcm_icon, .qcm_text{
+      transition: all .3s;
+}
+
+/*
+@keyframes swing {
+      10%{
+            transform: translateX(10%);
+      }
+      20%{
+            transform: translateX(-10%);
+      }
+      30%{
+            transform: translateX(8%);
+      }
+      40%{
+            transform: translateX(-8%);
+      }
+      50%{
+            transform: translateX(6%);
+      }
+      60%{
+            transform: translateX(-6%);
+      }
+      70%{
+            transform: translateX(4%);
+      }
+      80%{
+            transform: translateX(-4%);
+      }
+      90%{
+            transform: translateX(2%);
+      }
+      100%{
+            transform: translateX(0%);
+      }
+}
+*/

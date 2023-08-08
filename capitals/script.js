@@ -20,6 +20,7 @@ function jeu(){
     document.querySelector(".answer").style.backgroundColor = "transparent";
     document.querySelector(".buttoncontainer").style.display = "none";
     document.querySelector(".indice").style.display = "flex";
+    document.querySelector(".qcm").style.display = "flex";
     document.querySelector(".reponse").style.display = "flex";
     document.querySelector(".reponse").style.flexDirection = "column";
     document.querySelector(".reponse").innerHTML = "<input type='text' id='reponse' placeholder='Réponse' autofocus><br><button onclick='checkans()' class='learn-more' id='valid'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Valider</span></button>";
@@ -49,7 +50,7 @@ function checkans(){
         audioright.play();
         document.querySelector(".indice").style.display = "none";
         var x = setTimeout(jeu, 1000);
-    } else {undefined
+    } else {
         vie--;
         if (vie < 1) {
             document.querySelector(".answer").innerHTML = "Vous avez perdu !";
@@ -146,6 +147,8 @@ function indice(){
     clue = true;
     //on veut indiquer la première lettre de la capitale dans le champ de réponse
     var indice = capitales[i].charAt(0);
+    document.querySelector(".indice").style.display = "none";
+    document.querySelector(".qcm").style.display = "none";
     document.querySelector("#reponse").value = indice;
     document.querySelector("#reponse").focus();
 }
@@ -164,4 +167,9 @@ function closeRegles(){
     setTimeout(function(){
         document.querySelector(".regles").style.display = "none";
     }, 100);
+}
+
+function qcm(){
+    document.querySelector(".indice").style.display = "none";
+    document.querySelector(".qcm").style.display = "none";
 }
