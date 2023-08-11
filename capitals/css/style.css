@@ -108,3 +108,41 @@ body{
     top: 50%;
     right: 0;
 }
+
+.qcmcontainer{
+    display: none;
+    position: fixed;
+    z-index: 0;
+    top: 45%;
+    height: 300px;
+    left: 30%;
+    right: 30%;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Carter One;
+}
+
+#choix1, #choix2, #choix3, #choix4 {
+  display: block;
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+  text-align: center;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+#choix1:hover, #choix2:hover, #choix3:hover, #choix4:hover {
+  background-color: #282936;
+  border: 1px solid #282936;
+  color: #fff;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}

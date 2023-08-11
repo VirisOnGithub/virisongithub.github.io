@@ -3,11 +3,11 @@ var vie = 4;
 var clue = false;
 
 //audios
-var audioright = document.createElement("audio");
+const audioright = document.createElement("audio");
 audioright.src = "assets/audio/valid.mp3";
-var audiowrong = document.createElement("audio");
+const audiowrong = document.createElement("audio");
 audiowrong.src = "assets/audio/wrong.mp3";
-var rickroll = document.createElement("audio");
+const rickroll = document.createElement("audio");
 rickroll.src = "assets/audio/rickroll.mp3";
 
 //fonctions
@@ -20,6 +20,7 @@ function jeu(){
     document.querySelector(".answer").style.backgroundColor = "transparent";
     document.querySelector(".buttoncontainer").style.display = "none";
     document.querySelector(".indice").style.display = "flex";
+    document.querySelector(".qcm").style.display = "flex";
     document.querySelector(".qcm").style.display = "flex";
     document.querySelector(".reponse").style.display = "flex";
     document.querySelector(".reponse").style.flexDirection = "column";
@@ -39,16 +40,17 @@ function checkans(){
     } else
     if (capitale == capitales[i] || capitale.toLowerCase() == capitales[i].toLowerCase() || capitale.toUpperCase() == capitales[i].toUpperCase() || (capitale == "andorre la vieille" && capitales[i] == "Andorre-la-Vieille")) {
         if (clue == true) {
-            score += 0.5;
+            score ++;
             clue = false;
         }
         else{
-            score++;
+            score += 2;
         }
         document.querySelector(".answer").innerHTML = "Bonne réponse !";
         document.querySelector(".answer").style.backgroundColor = "#00ff00";
         audioright.play();
         document.querySelector(".indice").style.display = "none";
+        document.querySelector(".qcm").style.display = "none";
         var x = setTimeout(jeu, 1000);
     } else {
         vie--;
@@ -99,7 +101,7 @@ function checkans(){
     document.getElementById("reponse").value = "";
 }
 
-document;addEventListener("keydown", function (e) {
+document.addEventListener("keydown", function (e) {
     if (e.key == "Enter" && pays.length > 0 && vie > 0) {
         checkans();
     }
@@ -172,4 +174,43 @@ function closeRegles(){
 function qcm(){
     document.querySelector(".indice").style.display = "none";
     document.querySelector(".qcm").style.display = "none";
+
+    document.querySelector(".reponse").style.display = "none";
+    document.querySelector(".qcmcontainer").style.display = "flex";
+
+    let j = Math.floor(Math.random() * pays.length);
+    let k = Math.floor(Math.random() * pays.length);
+    let l = Math.floor(Math.random() * pays.length);
+
+    while(j == i){
+        j = Math.floor(Math.random() * pays.length);
+    }
+    while(k == i || k == j){
+        k = Math.floor(Math.random() * pays.length);
+    }
+    while(l == i || l == j || l == k){
+        l = Math.floor(Math.random() * pays.length);
+    }
+
+    let choix2 = [pays[i], pays[j], pays[k], pays[l]];
+    let choix = [capitales[i], capitales[j], capitales[k], capitales[l]];
+
+    for (let m = 1; m < 5; m++){
+        let n = Math.floor(Math.random() * choix.length);
+        document.getElementById("choix" + m).innerHTML = choix[n];
+        choix.splice(n, 1);
+        choix2.splice(n, 1);
+    }
+
+    for (let m = 1; m < 5; m++){
+        document.getElementById("choix" + m).onclick = function(){
+            document.querySelector(".qcmcontainer").style.display = "none";
+            document.querySelector(".reponse").style.display = "flex";
+            document.querySelector("#reponse").value = document.getElementById("choix" + m).innerHTML;
+            document.querySelector("#reponse").focus();
+
+            score-=1.5;
+            checkans();
+        }
+    }
 }
