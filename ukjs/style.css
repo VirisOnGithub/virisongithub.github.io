@@ -7,12 +7,12 @@
   src: url(assets/fonts/Salting-Free.ttf);
 }
 
-  #i1{
-    left: 10%;
-  }
-  #i2{
-    right: 10%;
-  }
+#i1{
+  left: 10%;
+}
+#i2{
+  right: 10%;
+}
 
 .icon{
   position: absolute;

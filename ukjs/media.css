@@ -1,0 +1,8 @@
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+    #i1{
+        left: 5%;
+      }
+      #i2{
+        right: 5%;
+    }
+}
