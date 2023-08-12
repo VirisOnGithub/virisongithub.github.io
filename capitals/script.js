@@ -1,6 +1,7 @@
 var score = 0;
 var vie = 4;
 var clue = false;
+var qcmvar = false;
 
 //audios
 const audioright = document.createElement("audio");
@@ -42,6 +43,10 @@ function checkans(){
         if (clue == true) {
             score ++;
             clue = false;
+        }
+        else if (qcmvar == true){
+            score += 0.5;
+            qcmvar = false;
         }
         else{
             score += 2;
@@ -208,8 +213,8 @@ function qcm(){
             document.querySelector(".reponse").style.display = "flex";
             document.querySelector("#reponse").value = document.getElementById("choix" + m).innerHTML;
             document.querySelector("#reponse").focus();
-
-            score-=1.5;
+            
+            qcmvar = true;
             checkans();
         }
     }
