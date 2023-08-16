@@ -3,6 +3,7 @@ var vie = 4;
 var clue = false;
 var qcmvar = false;
 
+
 //audios
 const audioright = document.createElement("audio");
 audioright.src = "assets/audio/valid.mp3";
@@ -12,29 +13,32 @@ const rickroll = document.createElement("audio");
 rickroll.src = "assets/audio/rickroll.mp3";
 
 //fonctions
-function jeu(){
-    i = Math.floor(Math.random() * pays.length);
-    
-    afficheDrapeau();
+function jeu() {
+  i = Math.floor(Math.random() * pays.length);
+  
+  afficheDrapeau();
 
-    document.querySelector(".answer").innerHTML = "Quelle est la capitale de " + pays[i] + " ?";
-    document.querySelector(".answer").style.backgroundColor = "transparent";
-    document.querySelector(".buttoncontainer").style.display = "none";
-    document.querySelector(".indice").style.display = "flex";
-    document.querySelector(".qcm").style.display = "flex";
-    document.querySelector(".qcm").style.display = "flex";
-    document.querySelector(".reponse").style.display = "flex";
-    document.querySelector(".reponse").style.flexDirection = "column";
-    document.querySelector(".reponse").innerHTML = "<input type='text' id='reponse' placeholder='Réponse' autofocus><br><button onclick='checkans()' class='learn-more' id='valid'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Valider</span></button>";
-    document.getElementById("reponse").focus();
+  const answer = document.querySelector(".answer");
+  answer.innerHTML = "Quelle est la capitale de " + pays[i] + " ?";
+  answer.style.backgroundColor = "transparent";
+  document.querySelector(".buttoncontainer").style.display = "none";
+  document.querySelector(".indice").style.display = "flex";
+  document.querySelector(".qcm").style.display = "flex";
+  document.querySelector(".reponse").style.display = "flex";
+  document.querySelector(".reponse").style.flexDirection = "column";
+  document.querySelector(".reponse").innerHTML = "<input type='text' id='reponse' placeholder='Réponse' autofocus><br><button onclick='checkans()' class='learn-more' id='valid'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Valider</span></button>";
+  document.getElementById("reponse").focus();
 }
 
 function checkans(){
     let capitale = document.getElementById("reponse").value;
     //on veut vérifier si la capitale est bonne, mais sans tenir compte de la casse
 
+    const answer = document.querySelector(".answer");
+    const reponse = document.querySelector(".reponse");
+
     if (capitale == null) {
-        document.querySelector(".answer").innerHTML = "Vous avez abandonné !";
+        answer.innerHTML = "Vous avez abandonné !";
         document.querySelector(".indice").style.display = "none";
         document.querySelector(".buttoncontainer").innerHTML = "<button onclick='location.reload()' class='learn-more'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Rejouer</span></button>";
         return;
@@ -51,8 +55,8 @@ function checkans(){
         else{
             score += 2;
         }
-        document.querySelector(".answer").innerHTML = "Bonne réponse !";
-        document.querySelector(".answer").style.backgroundColor = "#00ff00";
+        answer.innerHTML = "Bonne réponse !";
+        answer.style.backgroundColor = "#00ff00";
         audioright.play();
         document.querySelector(".indice").style.display = "none";
         document.querySelector(".qcm").style.display = "none";
@@ -60,13 +64,13 @@ function checkans(){
     } else {
         vie--;
         if (vie < 1) {
-            document.querySelector(".answer").innerHTML = "Vous avez perdu !";
-            document.querySelector(".reponse").innerHTML = "<button onclick='location.reload()' class='learn-more'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Rejouer</span></button>";
+            answer.innerHTML = "Vous avez perdu !";
+            reponse.innerHTML = "<button onclick='location.reload()' class='learn-more'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Rejouer</span></button>";
             document.querySelector(".indice").style.display = "none";
             return;
         }
-        document.querySelector(".answer").innerHTML = "La bonne réponse était " + capitales[i];
-        document.querySelector(".answer").style.backgroundColor = "#ff0000";
+        answer.innerHTML = "La bonne réponse était " + capitales[i];
+        answer.style.backgroundColor = "#ff0000";
         document.querySelector(".indice").style.display = "none";
         audiowrong.play();
         var x = setTimeout(jeu, 2000);
@@ -87,9 +91,9 @@ function checkans(){
     document.getElementById("drapeau").display = "none";
 
     if (pays.length < 1) {
-        document.querySelector(".answer").innerHTML = "Vous avez Gagné !";
-        document.querySelector(".answer").style.backgroundColor = "#FFD700";
-        document.querySelector(".reponse").innerHTML = "<button onclick='location.reload()' class='learn-more'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Rejouer</span></button>";
+        answer.innerHTML = "Vous avez Gagné !";
+        answer.style.backgroundColor = "#FFD700";
+        reponse.innerHTML = "<button onclick='location.reload()' class='learn-more'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Rejouer</span></button>";
         document.body.style.backgroundImage = "url('assets/pictures/rickroll.webp')";
         rickroll.play();
         document.querySelector(".answerspace").style.backgroundColor = "transparent";
@@ -100,7 +104,7 @@ function checkans(){
     }
 
     //On veut remettre le focus sur l'input
-    document.querySelector(".reponse").innerHTML = "<input type='text' id='reponse' placeholder='Réponse' autofocus><br><button onclick='checkans()' class='learn-more' id='valid'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Valider</span></button>";
+    reponse.innerHTML = "<input type='text' id='reponse' placeholder='Réponse' autofocus><br><button onclick='checkans()' class='learn-more' id='valid'><span class='circle' aria-hidden='true'><span class='icon arrow'></span></span><span class='button-text'>Valider</span></button>";
     document.getElementById("reponse").focus();
     document.getElementById("reponse").select();
     document.getElementById("reponse").value = "";
@@ -170,10 +174,10 @@ function displayRegles(){
     document.querySelector(".regles").style.display = "block";
 }
 
-function closeRegles(){
-    setTimeout(function(){
-        document.querySelector(".regles").style.display = "none";
-    }, 100);
+function closeRegles() {
+  setTimeout(() => {
+    document.querySelector(".regles").style.display = "none";
+  }, 100);
 }
 
 function qcm(){
