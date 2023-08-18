@@ -1,0 +1,28 @@
+h1, h2{
+    text-align: center;
+}
+
+.personcontainer, .button, .dividercontainer{
+    display: flex;
+    align-items: center;
+    width : 100%;
+}
+
+.personcontainer, .dividercontainer{
+    flex-direction: column;
+}
+
+.button {
+    justify-content: center;
+}
+
+.person, .divider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+}
+
+.divider{
+    width: 200px;
+}

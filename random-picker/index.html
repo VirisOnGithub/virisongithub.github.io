@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Person Picker</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Random Person Picker</h1>
+        <div class="personcontainer"></div>
+        <div class="button">
+            <button onclick="addPerson()">Ajouter quelqu'un</button>
+            <button onclick="removePerson()">Enlever quelqu'un</button>
+        </div>
+        <div class="dividercontainer">
+            <input type="number" class="divider" placeholder="Combien de persones par équipe?">
+        </div>
+        <div class="button">
+            <button onclick="pickSquads()">Choisir les équipes</button>
+        </div>
+        <div class="result">
+            <h2>Équipes</h2>
+            <div class="personcontainer" id="squad"></div>
+        </div>
+    </body>
+</html>
