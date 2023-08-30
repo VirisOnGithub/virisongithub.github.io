@@ -112,6 +112,7 @@ nav{
     border-radius: 10px;
     border: 1px solid darkslateblue;
     margin: 10px;
+    height: min-content;
 }
 #projects li h3{
     font-size: 1.5em;
