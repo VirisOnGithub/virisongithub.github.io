@@ -4,7 +4,25 @@ h1{
 h2{
     text-align: left;
     margin-left: 10px;
+    animation: myanimation 1s infinite;
 }
+
+@keyframes myanimation{
+    0%{
+        color: red;
+        transform: translate(10px,10px)
+        
+    }
+    50%{
+        color: blue;
+        transform: translate(-10px,10px);
+    }
+    100%{
+        color: green;
+        transform: translate(10px,10px);
+    }
+}
+
 .row{
     margin: 0;
     padding: 0;
@@ -48,4 +66,10 @@ body {
 }
 #hidden{
     display: none;
+}
+.logo{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: min-content;
 }
