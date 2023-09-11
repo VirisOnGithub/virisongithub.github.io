@@ -21,27 +21,5 @@
             </div>
         </div>
         <div class="logo"><img src="UDL_logo_blanc-01__2_-removebg-preview.png"></div>
-
-        <div class="button" onclick="toggleHidden();"></div>
-
-        <script>
-            var elems = document.querySelectorAll("#hidden");
-            for (var i = 0; i < elems.length; i++) {
-                x = elems[i];
-                x.style.display = "none";
-            }
-
-            function toggleHidden() {
-                for (var i = 0; i < elems.length; i++) {
-                    x = elems[i];
-                    if (x.style.display == "none") {
-                        x.style.display = "flex";
-                    } 
-                    else {
-                        x.style.display = "none";
-                    };
-                }
-            }
-        </script>
     </body>
 </html>

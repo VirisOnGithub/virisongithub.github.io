@@ -76,15 +76,3 @@ body {
     top:0;
     width: min-content;
 }
-
-.button{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-
-    left: 0;
-    bottom: 0;
-
-    z-index: 100000;
-    background-color: transparent;
-}
