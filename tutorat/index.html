@@ -26,8 +26,10 @@
 
         <script>
             var elems = document.querySelectorAll("#hidden");
-
-
+            for (var i = 0; i < elems.length; i++) {
+                x = elems[i];
+                x.style.display = "none";
+            }
 
             function toggleHidden() {
                 for (var i = 0; i < elems.length; i++) {
