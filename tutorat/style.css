@@ -76,3 +76,7 @@ body {
     top:0;
     width: min-content;
 }
+
+#hidden{
+    display: none;
+}
