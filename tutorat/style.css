@@ -1,5 +1,8 @@
 h1{
     text-align: center;
+    letter-spacing: 0.5em;
+    font-size: 3em;
+    font-family: 'Teko', sans-serif;
 }
 h2{
     text-align: left;
@@ -10,8 +13,7 @@ h2{
 @keyframes myanimation{
     0%{
         color: red;
-        transform: translate(10px,10px)
-        
+        transform: translate(10px,10px);        
     }
     50%{
         color: blue;
