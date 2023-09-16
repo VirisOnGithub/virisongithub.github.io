@@ -1,0 +1,20 @@
+:root{
+    --epaisseur: 0px;
+}
+
+table{
+    border: var(--epaisseur) solid black;
+    height : min-content;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+}
+td{
+    border: var(--epaisseur) solid black;
+    height : 100%;
+    text-align: center;
+    width: 50%;
+}
+.item{
+    text-align: center;
+}
