@@ -20,17 +20,23 @@
         <table>
             <tr>
                 <td>
-                    <div class="item" onclick="window.open('feuilles/theoremes/Permutations, Déterminants.pdf','_blank')">Théorèmes : Permutations, Déterminants</div>
-                    <div class="item" onclick="window.open('feuilles/démo/algèbre/Permutations - Déterminants.pdf','_blank')">Démos : Permutations, Déterminants</div>
+                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/Permutations, Déterminants.pdf','_blank')">Théorèmes : Permutations, Déterminants</div>
+                    <div class="item" id="finished" onclick="window.open('feuilles/démo/algèbre/Permutations - Déterminants.pdf','_blank')">Démos : Permutations, Déterminants</div>
                 </td>
                 <td>
-                    <div class="item" onclick="window.open('feuilles/theoremes/Intégrales généralisées.pdf','_blank')">Théorèmes : Intégrales généralisées</div>
-                    <div class="item" onclick="window.open('feuilles/démo/analyse/Intégrales généralisées.pdf','_blank')">Démos : Intégrales généralisées</div>
-                    <div class="item" onclick="window.open('feuilles/theoremes/Suites numériques.pdf','_blank')">Théorèmes : Suites numériques</div>
-                    <div class="item" onclick="window.open('feuilles/démo/analyse/Suites numériques.pdf','_blank')">Démos : Suites numériques</div>
-
+                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/Intégrales généralisées.pdf','_blank')">Théorèmes : Intégrales généralisées</div>
+                    <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Intégrales généralisées.pdf','_blank')">Démos : Intégrales généralisées</div>
+                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/Suites numériques.pdf','_blank')">Théorèmes : Suites numériques</div>
+                    <div class="item" id="inprogress" onclick="window.open('feuilles/démo/analyse/Suites numériques.pdf','_blank')">Démos : Suites numériques</div>
                 </td>
             </tr>
         </table>
+
+        <!--widget pour expliciter les couleurs-->
+        <div class="widget">
+            <div class="boxwidget" id="finished">Fini</div>
+            <div class="boxwidget" id="inprogress">En cours</div>
+            <div class="boxwidget" id="notstarted">Pas commencé</div>
+        </div>
     </body>
 </html>

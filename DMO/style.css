@@ -1,7 +1,6 @@
 :root{
     --epaisseur: 0px;
 }
-
 table{
     border: var(--epaisseur) solid black;
     height : min-content;
@@ -18,4 +17,40 @@ td{
 }
 .item{
     text-align: center;
+}
+
+/*état des fiches*/
+#finished{
+    background-color: green;
+}
+#inprogress{
+    background-color: orange;
+}
+#notstarted{
+    background-color: red;
+}
+/* WIDGET */
+.widget{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15%;
+    height: 100px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.widget:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+.boxwidget{
+    width: 80%;
 }
