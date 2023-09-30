@@ -12,6 +12,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">
+        <script defer>
+            function notstarted() {
+                alert("Cette feuille n'a pas encore été commencée !");
+            }
+        </script>
     </head>
     <body>
         <h1>D'MO</h1>
@@ -28,6 +33,8 @@
                     <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Intégrales généralisées.pdf','_blank')">Démos : Intégrales généralisées</div>
                     <div class="item" id="finished" onclick="window.open('feuilles/theoremes/Suites numériques.pdf','_blank')">Théorèmes : Suites numériques</div>
                     <div class="item" id="inprogress" onclick="window.open('feuilles/démo/analyse/Suites numériques.pdf','_blank')">Démos : Suites numériques</div>
+                    <div class="item" id="inprogress" onclick="window.open('feuilles/theoremes/Suites de fonctions.pdf','_blank')">Théorèmes : Suites de fonctions</div>
+                    <div class="item" id="notstarted" onclick="notstarted()">Démos : Suites numériques</div>
                 </td>
             </tr>
         </table>
