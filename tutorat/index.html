@@ -7,12 +7,24 @@
         <link rel="icon" href="">
         <link rel="stylesheet" href="style.css">
 
+        <!--Styles pour les boutons génériques-->
+        <link rel="stylesheet" href="../styles/style-discord-github.css">
+        <link rel="stylesheet" href="../styles/style-retour-accueil.css">
+
         <!--POLICES-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <!-- Retour à l'accueil -->
+        <header>
+            <button class="Btn" onclick="window.open('../index.html','_self')">
+                <img src="../assets/home.svg" alt="accueil" class="svgIcon" height="30px">
+                <span class="text">Accueil</span>
+            </button>
+        </header>
+
         <h1>Poly'Tuto</h1>
         <h2>Les polycopiés</h2>
         <div class="container">
@@ -42,5 +54,22 @@
             </div>
         </div>
         <div class="logo"><img src="assets/UDL_logo_blanc-01__2_-removebg-preview.png"></div>
+
+         <!-- Discord & Github-->
+         <footer>
+            <button class="Btn" onclick="window.open('https://discord.gg/n9VYWwUURV','_blank')">
+                <img src="../assets/discord.svg" alt="Discord logo" class="svgIcon" height="30px">
+                <span class="text">Discord</span>
+            </button>
+            <button class="Btn" onclick="window.open('https://github.com/VirisOnGithub','_blank')">
+                <img src="../assets/github.svg" alt="Github logo" class="svgIcon" height="30px">
+                <span class="text">Github</span>
+            </button>
+            <button class="Btn" onclick="window.open('mailto:virisongithub@gmail.com','_blank')">
+                <img src="../assets/mail.svg" alt="mail" class="svgIcon" height="30px">
+                <span class="text">Mail</span>
+            </button>
+            <a href="https://wakatime.com/@Viris_"><img src="https://wakatime.com/badge/user/b72ca6a4-e042-401d-8f2e-b404eaf1c6e5.svg" alt="Total time coded since Jul 3 2023" /></a>
+        </footer>
     </body>
 </html>
