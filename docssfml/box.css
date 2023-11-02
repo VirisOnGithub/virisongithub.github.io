@@ -1,0 +1,91 @@
+:root{
+  --color: #8ec547;
+}
+
+.checkboxtoggler {
+    width: 3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.7em;
+    cursor: pointer;
+  }
+  
+  .line-1 {
+    background: var(--color);
+    height: 0.3em;
+    border-radius: 10em;
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+  }
+  
+  .line-2 {
+    background: var(--color);
+    height: 0.3em;
+    border-radius: 10em;
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+  }
+  
+  .line-3 {
+    background: var(--color);
+    height: 0.3em;
+    border-radius: 10em;
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+  }
+  
+  #toggleChecker {
+    height: 3em;
+    width: 100%;
+    display: none;
+  }
+  
+  #toggleChecker:checked + #togglerLable .checkboxtoggler .line-1 {
+    -webkit-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+    -ms-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+    transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+
+    background-color: black;
+  }
+  
+  #toggleChecker:checked + #togglerLable .checkboxtoggler .line-2 {
+    -webkit-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+    -ms-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+    transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+
+    background-color: black;
+  }
+  
+  #toggleChecker:checked + #togglerLable .checkboxtoggler .line-3 {
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
+  }
+
+.toggler{
+  margin: 10px;
+}
+.box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0;
+  background-color: #8ec547;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+}
+.index{
+  transition: all 0.5s ease-in-out;
+  color: transparent;
+  z-index: 2;
+  
+}

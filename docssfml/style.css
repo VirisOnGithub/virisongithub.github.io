@@ -1,0 +1,56 @@
+.container{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+body{
+    margin: 0 210px;
+}
+.title1{
+    text-align: center;
+    color: #000;
+    border: 2px solid #8ec547;
+    white-space: nowrap;
+    width: min-content;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.docref{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    margin: 10px;
+    background-color: #8ec547;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: monospace;
+    color: #eee;
+    cursor: pointer;
+}
+.section{
+    padding-top: 100px;
+}
+pre code {
+    display: block; padding: 0.5em;
+    color: #333;
+    background: lightgrey;
+    border-radius: 5px;
+    border : 1px solid gray;
+}
+
+.attention{
+    list-style: url(assets/warning.svg);
+
+    padding: 10px 10px 10px 30px;
+    background-color: #ff7878;
+    border-radius: 5px;
+    border: 1px solid red;
+}

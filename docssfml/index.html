@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doc for SFML</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="box.css">
+
+        <!--highlight pack for code-->
+        <link rel="stylesheet" type="text/css" href="//www.sfml-dev.org/scripts/highlight/styles/github.css"/>
+        <script type="text/javascript" src="//www.sfml-dev.org/scripts/highlight/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <!--Summary-->
+        <div class="box">
+            <div class="toggler">
+                <input id="toggleChecker" type="checkbox">
+                <label id="togglerLable" for="toggleChecker">
+                <div class="checkboxtoggler">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                    <div class="line-3"></div>
+                </div>
+                </label>
+            </div>
+            <h2 class="index">Système</h2>
+            <a class="index" href="#time">Utilisation du temps</a><br>
+            <a class="index" href="#thread">Les threads</a><br>
+            <a class="index" href="#flux">Les flux (streams)</a><br>
+            <h2 class="index">Fenêtre</h2>
+            <a class="index" href="#fenetre">Ovurir et gérer les fenêtres</a><br>
+            <a class="index" href="#evenement">Les évènements</a><br>
+            <a class="index"></a><br>
+        </div>
+
+        <div class="container"><h1 class="title1">SFML : Tutoriel Condensé</h1></div>
+        <div class="docref" onclick="window.open('https://www.sfml-dev.org/tutorials/2.6/', '_blank')">Tutos officiels</div>
+        <div style="height: 100px;"></div>
+
+        <!--Corps du document-->
+        <section id="time">
+            <h2>L'utilisation du temps</h2>
+            <h3>Conversion du temps</h3>
+            <p>La classe <code>sf::Time</code> permet de construire et de comparer différentes échelles de temps :</p>
+            <pre><code>
+                sf::Time t1 = sf::microseconds(10000); 
+                sf::Time t2 = sf::milliseconds(10); 
+                sf::Time t3 = sf::seconds(0.01f); 
+                //on a alors t1 == t2 == t3
+            </code></pre>
+            <p>La classe <code>sf::Time</code> supporte aussi toutes les opérations arithmétiques</p>
+            <pre><code>
+                sf::Time t1 = sf::seconds(2); 
+                sf::Time t2 = sf::milliseconds(1500); 
+                sf::Time t3 = t1 + t2; // t3 vaut 3500 millisecondes
+            </code></pre>
+            <h3>Mesure du temps</h3>
+            <p>La classe <code>sf::Clock</code> permet de mesurer le temps écoulé :</p>
+            <pre><code>
+                sf::Clock clock; // démarre le chrono 
+                ... 
+                sf::Time elapsed1 = clock.getElapsedTime(); 
+                float elapsed2 = clock.getElapsedTime().asSeconds(); 
+                clock.restart(); // remet le chrono à zéro
+            </code></pre>
+            <p>Note : <code>clock.restart()</code> renvoie également le temps écoulé.</p>
+        </section>
+
+        <section id="thread">
+            <h2>Les threads</h2>
+            <p>La classe <code>sf::Thread</code> permet de créer des threads :</p>
+            <pre><code>
+                void threadFunction() 
+                { 
+                    // ... 
+                } 
+                sf::Thread thread(&threadFunction); 
+                thread.launch(); // lance le thread
+            </code></pre>
+            <p>Il est possible de passer des arguments à la fonction du thread :</p>
+            <pre><code>
+                void threadFunction(int argument) 
+                { 
+                    // ... 
+                } 
+                sf::Thread thread(&threadFunction, 5); 
+                thread.launch(); // lance le thread
+            </code></pre>
+            <p>Il est possible d'attendre la fin d'un thread :</p>
+            <pre><code>
+                sf::Thread thread(&threadFunction); 
+                thread.launch(); 
+                thread.wait(); // attend la fin du thread
+            </code></pre>
+            <p>Il est possible de terminer un thread :</p>
+            <pre><code>
+                void threadFunction() 
+                { 
+                    // ... 
+                } 
+                sf::Thread thread(&threadFunction); 
+                thread.launch(); 
+                thread.terminate(); // termine le thread
+            </code></pre>
+            <p>Il est possible de tester si un thread est terminé :</p>
+            <pre><code>
+                sf::Thread thread(&threadFunction); 
+                thread.launch(); 
+                while (thread.isRunning()) 
+                { 
+                    // ... 
+                }
+            </code></pre>
+        </section>
+
+        <section id="flux">
+            <h2>Les flux (streams)</h2>
+            <p>La classe <code>sf::InputStream</code> permet de lire des données depuis un flux :</p>
+            <pre><code>
+                class MyStream : public sf::InputStream 
+                { 
+                    virtual sf::Int64 read(void* data, sf::Int64 size) 
+                    { 
+                        // ... 
+                    } 
+                    virtual sf::Int64 seek(sf::Int64 position) 
+                    { 
+                        // ... 
+                    } 
+                    virtual sf::Int64 tell() 
+                    { 
+                        // ... 
+                    } 
+                    virtual sf::Int64 getSize() 
+                    { 
+                        // ... 
+                    } 
+                }; 
+                MyStream stream; 
+                char data[50]; 
+                stream.read(data, 50); // lit 50 octets depuis le flux
+            </code></pre>
+            <p>La classe <code>sf::OutputStream</code> permet d'écrire des données dans un flux :</p>
+            <pre><code>
+                class MyStream : public sf::OutputStream 
+                { 
+                    virtual sf::Int64 write(const void* data, sf::Int64 size) 
+                    { 
+                        // ... 
+                    } 
+                }; 
+                MyStream stream; 
+                char data[50]; 
+                stream.write(data, 50); // écrit 50 octets dans le flux
+            </code></pre>
+            <p>La classe <code>sf::FileInputStream</code> permet de lire des données depuis un fichier :</p>
+            <pre><code>
+                sf::FileInputStream stream; 
+                if (stream.open("path/to/file")) 
+                { 
+                    char data[50]; 
+                    stream.read(data, 50); // lit 50 octets depuis le fichier 
+                }
+            </code></pre>
+            <p>La classe <code>sf::FileOutputStream</code> permet d'écrire des données dans un fichier :</p>
+            <pre><code>
+                sf::FileOutputStream stream; 
+                if (stream.open("path/to/file")) 
+                { 
+                    char data[50]; 
+                    stream.write(data, 50); // écrit 50 octets dans le fichier 
+                }
+            </code></pre>
+        </section>
+
+        <!--Fenêtre-->
+
+        <section id="fenetre">
+            <h2>Ouvrir et gérer une fenêtre</h2>
+            <p>La classe <code>sf::Window</code> permet de créer et de gérer une fenêtre :</p>
+            <pre><code>
+                #include &lt;SFML/Window.hpp&gt; <br>
+                int main(){
+                    sf::Window window(sf::VideoMode(800, 600), "My window"); 
+                }
+            </code></pre>
+            <p>La taille définie par VideoMode est la taille interne, le 2e paramtère est le titre de la fenêtre</p>
+            <p>Vous pouvez aussi créer la fenêtre après la création de l'instance :</p>
+            <pre><code>
+                sf::Window window; 
+                window.create(sf::VideoMode(800, 600), "My window");
+            </code></pre>
+
+            <p>Cependant, pour fonctionner correctement, la fenêtre a besoin d'une boucle d'évènement :</p>
+            <pre><code>
+                #include &lt;SFML/Window.hpp&gt; <br>
+                    int main(){
+                    sf::Window window(sf::VideoMode(800, 600), "My window");
+                    while (window.isOpen()){
+                        sf::Event event;
+                        while (window.pollEvent(event)){
+                            if (event.type == sf::Event::Closed)
+                                window.close();
+                        }
+                    }
+                    
+                    return 0;
+                }
+            </code></pre>
+
+            <p>On peut aussi régler d'autres paramètres sur la fenêtre</p>
+            <pre><code>
+                window.setPosition(sf::Vector2i(10, 50)); // Position de la fenêtre sur l'écran
+                window.setSize(sf::Vector2u(640, 480)); // Taille de la fenêtre
+                window.setTitle("SFML window"); // Titre de la fenêtre
+                window.setIcon(50, 50, pixels); // Icone de la fenêtre
+                window.setVisible(false); // Rend la fenêtre invisible
+                window.setMouseCursorVisible(false); // Cache le curseur de la souris
+                window.setFramerateLimit(60); // Limite le nombre de FPS à 60
+                window.setVerticalSyncEnabled(true); //éviter le tearing en activant la synchronisation verticale
+                bool focus = window.hasFocus(); // Vérifie si la fenêtre est au premier plan
+            </code></pre>
+
+            <ul class="attention">
+                <li>Vous pouvez créer plusieurs fenêtres sur le même thread</li>
+                <li>Ne jamais utiliser <code>setVerticalSyncEnabled</code> et <code>setFramerateLimit</code> en même temps</li>
+                <li>Les écrans multiples sont mal gérés par SFML</li>
+                <li>Par convention et par obligation depuis Mac OS X, il est préférable de conserver le fenêtrage et les évènements dans un même thread, tandis que tout le reste ira dasn d'autres threads</li>
+                <li>Sous Windows, on ne peut pas créer correctement une fenêtre plus grande que le bureau. Il est donc déconseillé d'utiliser <code>VideoMode::getDesktopMode()</code> pour prendre en compte les décorations</li>
+            </ul>
+        </section>
+
+        <section id="evenement">
+            <h2>Les évènements</h2>
+            <p>Les évènements sont stockés dans des instances de la classe <code>sf::Event</code> :</p>
+            <p>Ces évènements utilisent uniquement les fonctions <code>pollEvent</code> et <code>waitEvent</code></p>
+            <pre><code class="cpp">sf::Event event;
+
+                // tant qu'il y a des évènements à traiter...
+                while (window.pollEvent(event))
+                {
+                    // on regarde le type de l'évènement...
+                    switch (event.type)
+                    {
+                        // fenêtre fermée
+                        case sf::Event::Closed:
+                            window.close();
+                            break;
+                
+                        // touche pressée
+                        case sf::Event::KeyPressed:
+                            ...
+                            break;
+                
+                        // on ne traite pas les autres types d'évènements
+                        default:
+                            break;
+                    }
+                }</code></pre>
+            <ul class="attention">
+                <li><code>sf::Event</code> est une union, on ne peut donc utiliser qu'un seul Event simultanément</li>
+            </ul>
+        </section>
+
+
+
+
+
+
+
+        <script>
+            var checkbox = document.getElementById("toggleChecker");
+            checkbox.checked = false;
+            var toggler = document.getElementById("togglerLable");
+            var box = document.querySelector(".box");
+            var indexes = document.querySelectorAll(".index");
+            indexes.forEach(index => {
+                index.style.transition = "color 0.5s";
+                index.onclick = () => {
+                    toggleSummary();
+                    checkbox.checked = false;
+                }
+            });
+            function toggleSummary(){
+                if(!checkbox.checked){
+                    box.style.width = "300px";
+                    indexes.forEach(index => {
+                        index.style.color = "white";
+                    });
+                }else{
+                    box.style.width = "0px";
+                    indexes.forEach(index => {
+                        index.style.color = "transparent";
+                    });
+                }
+            }
+            toggler.addEventListener("click", toggleSummary);
+        </script>
+    </body>
+</html>

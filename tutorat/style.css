@@ -5,8 +5,7 @@ h1{
     font-family: 'Teko', sans-serif;
 }
 h2{
-    text-align: left;
-    margin-left: 10px;
+    text-align: center;
     animation: fancy 1s infinite;
     width: 90%;
 }
@@ -14,15 +13,15 @@ h2{
 @keyframes fancy{
     0%{
         color: red;
-        transform: translateX(30px);        
+        transform: translateX(110px);
     }
     50%{
         color: blue;
-        transform: translateX(10px);
+        transform: translateX(90px);
     }
     100%{
         color: green;
-        transform: translateX(30px);
+        transform: translateX(110px);
     }
 }
 
