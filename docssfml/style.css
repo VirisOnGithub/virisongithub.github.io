@@ -34,6 +34,8 @@ body{
     font-family: monospace;
     color: #eee;
     cursor: pointer;
+    height: 15px;
+    width: 100px;
 }
 .section{
     padding-top: 100px;

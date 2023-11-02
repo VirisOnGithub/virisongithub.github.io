@@ -87,5 +87,5 @@
   transition: all 0.5s ease-in-out;
   color: transparent;
   z-index: 2;
-  
+  display: none;
 }

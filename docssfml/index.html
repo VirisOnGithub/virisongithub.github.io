@@ -11,8 +11,29 @@
         <link rel="stylesheet" type="text/css" href="//www.sfml-dev.org/scripts/highlight/styles/github.css"/>
         <script type="text/javascript" src="//www.sfml-dev.org/scripts/highlight/highlight.pack.js"></script>
         <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+        <!--Styles pour les boutons génériques-->
+        <link rel="stylesheet" href="../styles/style-discord-github.css">
+        <style>
+            header{
+                height: 45px;
+                position: fixed;
+                top: 0;
+                right: 0;
+                z-index: 1;
+                margin-top: 50px;
+            }
+        </style>
     </head>
     <body>
+        <!--Retour à l'accueil-->
+        <header>
+            <button class="Btn" onclick="window.open('../index.html','_self')">
+                <img src="../assets/home.svg" alt="accueil" class="svgIcon" height="30px">
+                <span class="text">Accueil</span>
+            </button>
+        </header>
+
         <!--Summary-->
         <div class="box">
             <div class="toggler">
@@ -25,11 +46,11 @@
                 </div>
                 </label>
             </div>
-            <h2 class="index">Système</h2>
+            <h2 class="index">Système</h2><br>
             <a class="index" href="#time">Utilisation du temps</a><br>
             <a class="index" href="#thread">Les threads</a><br>
             <a class="index" href="#flux">Les flux (streams)</a><br>
-            <h2 class="index">Fenêtre</h2>
+            <h2 class="index">Fenêtre</h2><br>
             <a class="index" href="#fenetre">Ovurir et gérer les fenêtres</a><br>
             <a class="index" href="#evenement">Les évènements</a><br>
             <a class="index"></a><br>
@@ -287,16 +308,35 @@
                 if(!checkbox.checked){
                     box.style.width = "300px";
                     indexes.forEach(index => {
+                        index.style.display = "inline";
                         index.style.color = "white";
                     });
                 }else{
                     box.style.width = "0px";
                     indexes.forEach(index => {
                         index.style.color = "transparent";
+                        index.style.display = "none";
                     });
                 }
             }
             toggler.addEventListener("click", toggleSummary);
         </script>
+
+        <!-- Discord & Github-->
+        <footer style="width: calc(100% - 420px);">
+            <button class="Btn" onclick="window.open('https://discord.gg/n9VYWwUURV','_blank')">
+                <img src="../assets/discord.svg" alt="Discord logo" class="svgIcon" height="30px">
+                <span class="text">Discord</span>
+            </button>
+            <button class="Btn" onclick="window.open('https://github.com/VirisOnGithub','_blank')">
+                <img src="../assets/github.svg" alt="Github logo" class="svgIcon" height="30px">
+                <span class="text">Github</span>
+            </button>
+            <button class="Btn" onclick="window.open('mailto:virisongithub@gmail.com','_blank')">
+                <img src="../assets/mail.svg" alt="mail" class="svgIcon" height="30px">
+                <span class="text">Mail</span>
+            </button>
+            <a href="https://wakatime.com/@Viris_"><img src="https://wakatime.com/badge/user/b72ca6a4-e042-401d-8f2e-b404eaf1c6e5.svg" alt="Total time coded since Jul 3 2023" /></a>
+        </footer>
     </body>
 </html>
