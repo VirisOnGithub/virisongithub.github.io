@@ -46,6 +46,7 @@
                 </div>
                 </label>
             </div>
+            <!-- <a class="index"></a><br> -->
             <h2 class="index">Système</h2><br>
             <a class="index" href="#time">Utilisation du temps</a><br>
             <a class="index" href="#thread">Les threads</a><br>
@@ -53,7 +54,7 @@
             <h2 class="index">Fenêtre</h2><br>
             <a class="index" href="#fenetre">Ovurir et gérer les fenêtres</a><br>
             <a class="index" href="#evenement">Les évènements</a><br>
-            <a class="index"></a><br>
+            <a class="index" href="#opengl">OpenGL</a><br>
         </div>
 
         <div class="container"><h1 class="title1">SFML : Tutoriel Condensé</h1></div>
@@ -480,7 +481,42 @@
                     // le bouton 1 du joystick 0 est pressé
                 }
             </code></pre>
+        </section>
+        <section id="opengl">
+            <h2>OpenGL</h2>
+            <p>La classe <code>sf::Window</code> permet d'utiliser OpenGL :</p>
+            <p>Pour cela on importe :</p>
+            <pre><code class="cpp">
+                #include &lt;SFML/OpenGL.hpp&gt;
+            </code></pre>
+            <ul class="attention">
+                <li>Point d'attention : les fonctions OpenGL son préfixées par <code>gl</code></li>
+            </ul>
+            <p>On peut alors utiliser les fonctions OpenGL :</p>
+            <pre><code class="cpp">
+                // on crée la fenêtre
+                sf::Window window(sf::VideoMode(800, 600), "OpenGL");
 
+                // on fait la boucle principale
+                bool running = true;
+                while (running)
+                {
+                    // on gère les évènements
+                    sf::Event event;
+                    while (window.pollEvent(event))
+                    {
+                        if (event.type == sf::Event::Closed)
+                            running = false;
+                    }
+
+                    // on dessine
+                    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+                    // ...
+
+                    // on affiche le résultat
+                    window.display();
+                }
+            </code></pre>
         </section>
 
 

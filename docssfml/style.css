@@ -46,6 +46,7 @@ pre code {
     background: lightgrey;
     border-radius: 5px;
     border : 1px solid gray;
+    white-space: pre-wrap;
 }
 
 .attention{
