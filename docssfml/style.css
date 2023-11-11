@@ -35,7 +35,7 @@ body{
     color: #eee;
     cursor: pointer;
     height: 15px;
-    width: 100px;
+    width: 110px;
 }
 .section{
     padding-top: 100px;
@@ -46,6 +46,7 @@ pre code {
     background: lightgrey;
     border-radius: 5px;
     border : 1px solid gray;
+    white-space: pre-wrap;
 }
 
 .attention{
@@ -55,4 +56,11 @@ pre code {
     background-color: #ff7878;
     border-radius: 5px;
     border: 1px solid red;
+}
+
+.undertitle{
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: underline;
+    margin: 0 0 0 20px;
 }

@@ -46,6 +46,7 @@
                 </div>
                 </label>
             </div>
+            <!-- <a class="index"></a><br> -->
             <h2 class="index">Système</h2><br>
             <a class="index" href="#time">Utilisation du temps</a><br>
             <a class="index" href="#thread">Les threads</a><br>
@@ -53,7 +54,7 @@
             <h2 class="index">Fenêtre</h2><br>
             <a class="index" href="#fenetre">Ovurir et gérer les fenêtres</a><br>
             <a class="index" href="#evenement">Les évènements</a><br>
-            <a class="index"></a><br>
+            <a class="index" href="#opengl">OpenGL</a><br>
         </div>
 
         <div class="container"><h1 class="title1">SFML : Tutoriel Condensé</h1></div>
@@ -257,7 +258,8 @@
             <h2>Les évènements</h2>
             <p>Les évènements sont stockés dans des instances de la classe <code>sf::Event</code> :</p>
             <p>Ces évènements utilisent uniquement les fonctions <code>pollEvent</code> et <code>waitEvent</code></p>
-            <pre><code class="cpp">sf::Event event;
+            <pre><code class="cpp">
+                sf::Event event;
 
                 // tant qu'il y a des évènements à traiter...
                 while (window.pollEvent(event))
@@ -283,7 +285,241 @@
             <ul class="attention">
                 <li><code>sf::Event</code> est une union, on ne peut donc utiliser qu'un seul Event simultanément</li>
             </ul>
+            <h3>Les types d'évènements</h3>
+            <p class="undertitle">Closed</p>
+                <p>Déclenché quand l'utilisateur tente de fermer la fen$etre</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::Closed)
+                    window.close();</code></pre>
+            <p class="undertitle">Resized</p>
+                <p>Déclenché quand la fenêtre est redimensionnée</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::Resized)
+                        std::cout << "new width: " << event.size.width << std::endl
+                                  << "new height: " << event.size.height << std::endl;
+                </code></pre>
+            <p class="undertitle">LostFocus</p>
+                <p>Déclenché quand la fenêtre perd le focus</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::LostFocus)
+                        std::cout << "window lost focus" << std::endl;
+                </code></pre>
+            <p class="undertitle">GainedFocus</p>
+                <p>Déclenché quand la fenêtre gagne le focus</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::GainedFocus)
+                        std::cout << "window gained focus" << std::endl;
+                </code></pre>
+            <p class="undertitle">TextEntered</p>
+                <p>Déclenché quand un caractère est entré</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::TextEntered)
+                    {
+                        if (event.text.unicode < 128)
+                            std::cout << "ASCII character typed: " << static_cast<char>(event.text.unicode) << std::endl;
+                    }
+                </code></pre>
+            <p class="undertitle">KeyPressed</p>
+                <p>Déclenché quand une touche est pressée</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::KeyPressed)
+                    {
+                        if (event.key.code == sf::Keyboard::Escape)
+                        {
+                            // on quitte l'application
+                            window.close();
+                        }
+                    }
+                </code></pre>
+            <p class="undertitle">KeyReleased</p>
+                <p>Déclenché quand une touche est relâchée</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::KeyReleased)
+                    {
+                        if (event.key.code == sf::Keyboard::Space)
+                        {
+                            // on change la couleur du fond en blanc
+                            window.clear(sf::Color::White);
+                        }
+                    }
+                </code></pre>
+            <p class="undertitle">MouseWheelScrolled</p>
+                <p>Déclenché quand la molette de la souris est utilisée</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::MouseWheelScrolled)
+                    {
+                        if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel)
+                        {
+                            std::cout << "wheel type: vertical" << std::endl;
+                            std::cout << "wheel movement: " << event.mouseWheelScroll.delta << std::endl;
+                            std::cout << "mouse x: " << event.mouseWheelScroll.x << std::endl;
+                            std::cout << "mouse y: " << event.mouseWheelScroll.y << std::endl;
+                        }
+                        else if (event.mouseWheelScroll.wheel == sf::Mouse::HorizontalWheel)
+                        {
+                            std::cout << "wheel type: horizontal" << std::endl;
+                            std::cout << "wheel movement: " << event.mouseWheelScroll.delta << std::endl;
+                            std::cout << "mouse x: " << event.mouseWheelScroll.x << std::endl;
+                            std::cout << "mouse y: " << event.mouseWheelScroll.y << std::endl;
+                        }
+                    }
+                </code></pre>
+                <ul class="attention">
+                    <li>La molette de la souris peut être horizontale ou verticale</li>
+                    <li>La molette de la souris peut être simulée par un trackpad</li>
+                    <li>L'évènement associé est <code>event.mouseWheelScroll</code>, et compte le défilement en ticks</li>
+                </ul>
+            <p class="undertitle">MouseButtonPressed/MouseButtonReleased</p>
+                <p>Déclenché quand un bouton de la souris est pressé/relâché</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::MouseButtonPressed)
+                    {
+                        if (event.mouseButton.button == sf::Mouse::Left)
+                        {
+                            // on change la couleur du fond en rouge
+                            window.clear(sf::Color::Red);
+                        }
+                    }
+                </code></pre>
+            <p class="undertitle">MouseMoved</p>
+                <p>Déclenché quand la souris est déplacée</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::MouseMoved)
+                    {
+                        std::cout << "new mouse x: " << event.mouseMove.x << std::endl;
+                        std::cout << "new mouse y: " << event.mouseMove.y << std::endl;
+                    }
+                </code></pre>
+                <ul class="attention">
+                    <li>La position de la souris est relative à la fenêtre</li>
+                    <li>Cet évènement est indépendant du focus</li>
+                    <li>Cet évènement est incompatible avec un mouvement sur les décorations</li>
+                </ul>
+            <p class="undertitle">MouseEntered/MouseLeft</p>
+                <p>Déclenché quand la souris entre/sort de la fenêtre</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::MouseEntered)
+                    {
+                        std::cout << "the mouse cursor has entered the window" << std::endl;
+                    }
+                    else if (event.type == sf::Event::MouseLeft)
+                    {
+                        std::cout << "the mouse cursor has left the window" << std::endl;
+                    }
+                </code></pre>
+            <p class="undertitle">JoystickButtonPressed/JoystickButtonReleased</p>
+                <p>Déclenché quand un bouton du joystick est pressé/relâché</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::JoystickButtonPressed)
+                    {
+                        std::cout << "joystick button pressed!" << std::endl;
+                    }
+                    else if (event.type == sf::Event::JoystickButtonReleased)
+                    {
+                        std::cout << "joystick button released!" << std::endl;
+                    }
+                </code></pre>
+            <p class="undertitle">JoystickMoved</p>
+                <p>Déclenché quand un joystick est déplacé</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::JoystickMoved)
+                    {
+                        std::cout << "joystick moved!" << std::endl;
+                    }
+                </code></pre>
+                <ul class="attention">
+                    <li>Il existe un seuil de détection, ajustable avec <code>Window::setJoystickThreshold</code></li>
+                    <li>8 axes différents de joysticks sont supportés</li>
+                </ul>
+            <p class="undertitle">JoystickConnected/JoystickDisconnected</p>
+                <p>Déclenché quand un joystick est connecté/déconnecté</p>
+                <pre><code class="cpp">
+                    if (event.type == sf::Event::JoystickConnected)
+                    {
+                        std::cout << "joystick connected!" << std::endl;
+                    }
+                    else if (event.type == sf::Event::JoystickDisconnected)
+                    {
+                        std::cout << "joystick disconnected!" << std::endl;
+                    }
+                </code></pre>
         </section>
+
+        <section id="inputs">
+            <h2>Les entrées (Clavier, Joystick, Souris)</h2>
+            <p>La différence entre entrées et évènements est primordiale : les évènements avertissent un changement d'état, tandis que les entrées vérifient l'état du clavier à tout moment</p>
+            <h3>Clavier</h3>
+            <p>La classe <code>sf::Keyboard</code> permet de vérifier l'état du clavier :</p>
+            <pre><code class="cpp">
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+                {
+                    // la touche gauche est pressée
+                }
+            </code></pre>
+            <h3>Souris</h3>
+            <p>La classe <code>sf::Mouse</code> permet de vérifier l'état de la souris :</p>
+            <pre><code class="cpp">
+                if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    // le bouton gauche est pressé
+                }
+            </code></pre>
+            <ul class="attention">
+                <li>SFML ne supporte qu'une seule souris</li>
+                <li>La classe supporte 5 boutons de souris : clic gauche, droit, molette, + 2 autres</li>
+            </ul>
+            <p>On peut aussi récupérer la position de la souris, et la mettre auter part :</p>
+            <pre><code>
+                sf::Vector2i localPosition = sf::Mouse::getPosition(window); 
+                sf::Mouse::setPosition(sf::Vector2i(10, 50), window);
+            </code></pre>
+            <h3>Joystick</h3>
+            <p>La classe <code>sf::Joystick</code> permet de vérifier l'état d'un joystick :</p>
+            <pre><code class="cpp">
+                if (sf::Joystick::isButtonPressed(0, 1))
+                {
+                    // le bouton 1 du joystick 0 est pressé
+                }
+            </code></pre>
+        </section>
+        <section id="opengl">
+            <h2>OpenGL</h2>
+            <p>La classe <code>sf::Window</code> permet d'utiliser OpenGL :</p>
+            <p>Pour cela on importe :</p>
+            <pre><code class="cpp">
+                #include &lt;SFML/OpenGL.hpp&gt;
+            </code></pre>
+            <ul class="attention">
+                <li>Point d'attention : les fonctions OpenGL son préfixées par <code>gl</code></li>
+            </ul>
+            <p>On peut alors utiliser les fonctions OpenGL :</p>
+            <pre><code class="cpp">
+                // on crée la fenêtre
+                sf::Window window(sf::VideoMode(800, 600), "OpenGL");
+
+                // on fait la boucle principale
+                bool running = true;
+                while (running)
+                {
+                    // on gère les évènements
+                    sf::Event event;
+                    while (window.pollEvent(event))
+                    {
+                        if (event.type == sf::Event::Closed)
+                            running = false;
+                    }
+
+                    // on dessine
+                    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+                    // ...
+
+                    // on affiche le résultat
+                    window.display();
+                }
+            </code></pre>
+        </section>
+
+
 
 
 
@@ -307,10 +543,12 @@
             function toggleSummary(){
                 if(!checkbox.checked){
                     box.style.width = "300px";
-                    indexes.forEach(index => {
-                        index.style.display = "inline";
-                        index.style.color = "white";
-                    });
+                    setTimeout(() => {
+                        indexes.forEach(index => {
+                            index.style.display = "inline";
+                            index.style.color = "white";
+                        });
+                    }, 330);
                 }else{
                     box.style.width = "0px";
                     indexes.forEach(index => {
@@ -323,6 +561,7 @@
         </script>
 
         <!-- Discord & Github-->
+        <div style="height: 100px;"></div>
         <footer style="width: calc(100% - 420px);">
             <button class="Btn" onclick="window.open('https://discord.gg/n9VYWwUURV','_blank')">
                 <img src="../assets/discord.svg" alt="Discord logo" class="svgIcon" height="30px">
