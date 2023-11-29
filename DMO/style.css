@@ -17,6 +17,7 @@ td{
 }
 .item{
     text-align: center;
+    display: none;
 }
 
 /*état des fiches*/

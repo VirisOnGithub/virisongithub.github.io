@@ -20,6 +20,11 @@
                 alert("Cette feuille n'a pas encore été commencée !");
             }
         </script>
+        <script>
+            document.querySelectorAll('.item').forEach(item => {
+                item.style.display = "none";
+            });
+        </script>
     </head>
     <body>
         <!-- Retour à l'accueil -->
@@ -36,25 +41,43 @@
         <table>
             <tr>
                 <td>
-                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/algèbre/Permutations, Déterminants.pdf','_blank')">Théorèmes : Permutations, Déterminants</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/démo/algèbre/Permutations - Déterminants.pdf','_blank')">Démos : Permutations, Déterminants</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/algèbre/Réductions géométriques.pdf','_blank')">Théorèmes : Réductions géométriques</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/démo/algèbre/Réductions géométriques.pdf','_blank')">Démos : Réductions géométriques</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/algèbre/Réductions algébriques.pdf','_blank')">Théorèmes : Réductions algébriques</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/démo/algèbre/Réductions algébriques.pdf','_blank')">Démos : Réductions algébriques</div>
-                    <div class="item" id="inprogress" onclick="window.open('feuilles/theoremes/algèbre/Opérations sur les matrices.pdf', '_blank')">Théorèmes : Opérations sur les matrices</div>
+                    <div class="chap">
+                        <div class="item" id="finished" onclick="window.open('feuilles/theoremes/algèbre/Permutations, Déterminants.pdf','_blank')">Théorèmes : Permutations, Déterminants</div>
+                        <div class="item" id="finished" onclick="window.open('feuilles/démo/algèbre/Permutations - Déterminants.pdf','_blank')">Démos : Permutations, Déterminants</div>
+                    </div>
+                    <div class="chap">
+                        <div class="item" id="finished" onclick="window.open('feuilles/theoremes/algèbre/Réductions géométriques.pdf','_blank')">Théorèmes : Réductions géométriques</div>
+                        <div class="item" id="finished" onclick="window.open('feuilles/démo/algèbre/Réductions géométriques.pdf','_blank')">Démos : Réductions géométriques</div>
+                    </div>
+                    <div class="chap">
+                        <div class="item" id="finished" onclick="window.open('feuilles/theoremes/algèbre/Réductions algébriques.pdf','_blank')">Théorèmes : Réductions algébriques</div>
+                        <div class="item" id="finished" onclick="window.open('feuilles/démo/algèbre/Réductions algébriques.pdf','_blank')">Démos : Réductions algébriques</div>
+                    </div>
+                    <div class="chap">
+                        <div class="item" id="inprogress" onclick="window.open('feuilles/theoremes/algèbre/Opérations sur les matrices.pdf', '_blank')">Théorèmes : Opérations sur les matrices</div>
+                    </div>
                 </td>
                 <td>
-                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/analyse/Intégrales généralisées.pdf','_blank')">Théorèmes : Intégrales généralisées</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Intégrales généralisées.pdf','_blank')">Démos : Intégrales généralisées</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/analyse/Séries numériques.pdf','_blank')">Théorèmes : Séries numériques</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Séries numériques.pdf','_blank')">Démos : Séries numériques</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/analyse/Suites de fonctions.pdf','_blank')">Théorèmes : Suites de fonctions</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Suites de fonctions.pdf','_blank')">Démos : Suites de fonctions</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/theoremes/analyse/Séries de fonctions.pdf','_blank')">Théorèmes : Séries de fonctions</div>
-                    <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Séries de fonctions.pdf','_blank')">Démos : Séries de fonctions</div>
-                    <div class="item" id="inprogress" onclick="window.open('feuilles/theoremes/analyse/Séries entières.pdf','_blank')">Théorèmes : Séries entières</div>
-                    <div class="item" id="inprogress" onclick="window.open('feuilles/démo/analyse/Séries entières.pdf','_blank')">Démos : Séries entières</div>
+                    <div class="chap">
+                        <div class="item" id="finished" onclick="window.open('feuilles/theoremes/analyse/Intégrales généralisées.pdf','_blank')">Théorèmes : Intégrales généralisées</div>
+                        <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Intégrales généralisées.pdf','_blank')">Démos : Intégrales généralisées</div>
+                    </div>
+                    <div class="chap">
+                        <div class="item" id="finished" onclick="window.open('feuilles/theoremes/analyse/Séries numériques.pdf','_blank')">Théorèmes : Séries numériques</div>
+                        <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Séries numériques.pdf','_blank')">Démos : Séries numériques</div>
+                    </div>
+                    <div class="chap">
+                        <div class="item" id="finished" onclick="window.open('feuilles/theoremes/analyse/Suites de fonctions.pdf','_blank')">Théorèmes : Suites de fonctions</div>
+                        <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Suites de fonctions.pdf','_blank')">Démos : Suites de fonctions</div>
+                    </div>
+                    <div class="chap">
+                        <div class="item" id="finished" onclick="window.open('feuilles/theoremes/analyse/Séries de fonctions.pdf','_blank')">Théorèmes : Séries de fonctions</div>
+                        <div class="item" id="finished" onclick="window.open('feuilles/démo/analyse/Séries de fonctions.pdf','_blank')">Démos : Séries de fonctions</div>
+                    </div>
+                    <div class="chap">
+                        <div class="item" id="inprogress" onclick="window.open('feuilles/theoremes/analyse/Séries entières.pdf','_blank')">Théorèmes : Séries entières</div>
+                        <div class="item" id="inprogress" onclick="window.open('feuilles/démo/analyse/Séries entières.pdf','_blank')">Démos : Séries entières</div>
+                    </div>
                 </td>
             </tr>
         </table>
