@@ -6,24 +6,8 @@ h1{
 }
 h2{
     text-align: center;
-    animation: fancy 1s infinite;
-    width: 90%;
 }
 
-@keyframes fancy{
-    0%{
-        color: red;
-        transform: translateX(110px);
-    }
-    50%{
-        color: blue;
-        transform: translateX(90px);
-    }
-    100%{
-        color: green;
-        transform: translateX(110px);
-    }
-}
 
 .container{
     margin: 0;
