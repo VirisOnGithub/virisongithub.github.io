@@ -8,6 +8,14 @@ table{
     padding: 20px;
     margin: 20px;
 }
+.semestertitle{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+
 td{
     border: var(--epaisseur) solid black;
     height : 100%;
