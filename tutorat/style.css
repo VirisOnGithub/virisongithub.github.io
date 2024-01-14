@@ -15,7 +15,7 @@ h2{
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 .row{
@@ -64,4 +64,14 @@ body {
 
 #hidden{
     display: none;
+}
+
+.semester-separation{
+    display: flex;
+}
+
+@media screen and (max-width: 800px){
+    .semester-separation{
+        flex-direction: column;
+    }
 }
