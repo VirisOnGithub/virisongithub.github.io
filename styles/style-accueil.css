@@ -133,3 +133,18 @@ nav{
     height: 100px;
     width: 100%;
 }
+
+.noscript{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Carter One;
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
