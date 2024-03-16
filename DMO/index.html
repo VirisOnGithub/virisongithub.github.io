@@ -15,16 +15,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">
-        <script defer>
-            function notstarted() {
-                alert("Cette feuille n'a pas encore été commencée !");
-            }
-        </script>
-        <script>
-            document.querySelectorAll('.item').forEach(item => {
-                item.style.display = "none";
-            });
-        </script>
     </head>
     <body>
         <!-- Retour à l'accueil -->
@@ -102,6 +92,10 @@
                         <div class="item" id="inprogress" onclick="window.open('feuilles/theoremes/algèbre/Endomorphismes orthogonaux.pdf','_blank')">Théorèmes : Endomorphismes orthogonaux</div>
                         <div class="item" id="inprogress" onclick="window.open('feuilles/démo/algèbre/Endomorphismes orthogonaux.pdf','_blank')">Démos : Endomorphismes orthogonaux</div>
                     </div>
+                    <div class="chap">
+                        <div class="item" id="inprogress" onclick="window.open('feuilles/theoremes/algèbre/Isométries en dimension 2 et 3.pdf','_blank')">Théorèmes : Isométries en dimension 2 et 3</div>
+                        <div class="item" id="notstarted" onclick="window.open('','_blank')">Démos : Isométries en dimension 2 et 3</div>
+                    </div>
                 </td>
                 <td>
                     <div class="chap">
@@ -138,5 +132,12 @@
          <!-- Discord & Github-->
          <footer></footer>
         <script src="../scripts/footer.js"></script>
+        <script defer>
+            function notstarted(e) {
+                e.preventDefault();
+                alert("Cette feuille n'a pas encore été commencée !");
+            }
+            document.getElementById("notstarted").addEventListener("click", notstarted);
+        </script>
     </body>
 </html>
