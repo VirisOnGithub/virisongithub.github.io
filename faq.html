@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ</title>
+        <link rel="stylesheet" href="../styles/style-discord-github.css">
+        <link rel="stylesheet" href="../styles/style-retour-accueil.css">
+    </head>
+    <body>
+        <h1>Foire aux questions</h1>
+        <div class="faq"></div>
+        <footer></footer>
+        <script src="scripts/footer.js"></script>
+        <script>
+            fetch('scripts/faq.json')
+                .then(response => response.json())
+                .then(data => {
+                    const faq = document.querySelector('.faq')
+                    data.forEach(item => {
+                        const question = document.createElement('h2')
+                        question.textContent = item.question
+                        faq.appendChild(question)
+                        const answer = document.createElement('p')
+                        answer.textContent = item.answer
+                        faq.appendChild(answer)
+                    });
+                });
+        </script>
+    </body>
+</html>

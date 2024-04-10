@@ -12,5 +12,9 @@ footer.innerHTML = `
         <img src="/assets/mail.svg" alt="mail" class="svgIcon" height="30px">
         <span class="text">Mail</span>
     </button>
+    <button class="Btn" onclick="window.open('faq.html','_blank')">
+        <img src="/assets/faq.svg" alt="mail" class="svgIcon" height="30px">
+        <span class="text">FAQ</span>
+    </button>
     <a href="https://wakatime.com/@Viris_"><img src="https://wakatime.com/badge/user/b72ca6a4-e042-401d-8f2e-b404eaf1c6e5.svg" alt="Total time coded since Jul 3 2023" /></a>
 `;
